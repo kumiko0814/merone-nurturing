@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ナーチャリングコンサルの真髄｜株式会社Merone 森川くみこ</title>
+<meta name="description" content="顧客を動かすのではなく、自分から動きたくなる環境をつくる。株式会社Merone・森川くみこのナーチャリングコンサルの本質と提供範囲をまとめた紹介資料です。">
+<meta property="og:title" content="ナーチャリングコンサルの真髄｜株式会社Merone">
+<meta property="og:description" content="掘り起こしはその入り口にすぎません。売上が上がるプロセスなら、結果のために何だってやる。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef4fa;
+  --bg2:#f5f9fd;
+  --panel:#ffffff;
+  --ink:#3f3a3c;
+  --ink-soft:#6a6469;
+  --navy:#26405f;
+  --navy-deep:#1d3149;
+  --pink:#cf8f9c;
+  --pink-deep:#bd7886;
+  --pink-soft:#fbeef1;
+  --blue:#7fb0d2;
+  --blue-soft:#e3ecf6;
+  --line:#d9e4ef;
+  --line-soft:#e8eef5;
+  --shadow:0 18px 50px -28px rgba(38,64,95,.35);
+  --shadow-sm:0 8px 24px -16px rgba(38,64,95,.4);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#12161d;
+    --bg2:#161b24;
+    --panel:#1c222c;
+    --ink:#e6e8ec;
+    --ink-soft:#a3abb7;
+    --navy:#a9c4e4;
+    --navy-deep:#c4d6ee;
+    --pink:#d79aa6;
+    --pink-deep:#e0a9b4;
+    --pink-soft:#2c2126;
+    --blue:#8db6d6;
+    --blue-soft:#1f2a38;
+    --line:#2c3542;
+    --line-soft:#232b36;
+    --shadow:0 20px 60px -30px rgba(0,0,0,.7);
+    --shadow-sm:0 10px 26px -18px rgba(0,0,0,.7);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 620px at 82% -8%, var(--pink-soft) 0%, rgba(0,0,0,0) 55%),
+    radial-gradient(1100px 560px at 6% 2%, var(--blue-soft) 0%, rgba(0,0,0,0) 52%),
+    var(--bg);
+  color:var(--ink);
+  font-family:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  font-size:16px;line-height:1.95;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:.012em;
+}
+.serif{font-family:"Cormorant Garamond","Times New Roman",serif;font-style:italic;letter-spacing:.02em}
+img{max-width:100%;display:block}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+section{padding:74px 0}
+.divider{height:1px;background:linear-gradient(90deg,rgba(0,0,0,0),var(--line),rgba(0,0,0,0));max-width:1060px;margin:0 auto}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:saturate(1.2) blur(10px);
+  background:color-mix(in srgb, var(--bg) 82%, transparent);
+  border-bottom:1px solid var(--line-soft);
+}
+header.site .row{max-width:1060px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+header.site img{height:26px;width:auto}
+header.site .tag{font-size:12px;color:var(--ink-soft);letter-spacing:.14em;font-weight:600}
+@media(max-width:560px){header.site .tag{display:none}}
+
+/* ---------- eyebrow / section head ---------- */
+.eyebrow{
+  font-family:"Cormorant Garamond",serif;font-style:italic;
+  font-size:19px;color:var(--pink-deep);letter-spacing:.06em;margin-bottom:10px;font-weight:600;
+}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+.sec-no{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:34px;color:var(--blue);font-weight:600;line-height:1;flex:none}
+.sec-title{font-size:clamp(22px,3.2vw,29px);font-weight:800;color:var(--navy);letter-spacing:.01em;line-height:1.4;text-wrap:balance}
+.lead{font-size:17px;color:var(--ink-soft);max-width:760px;line-height:2.05}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 56px;text-align:left}
+.hero .kicker{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;color:var(--pink-deep);letter-spacing:.08em;font-weight:600}
+.hero h1{
+  font-size:clamp(30px,6vw,54px);font-weight:900;color:var(--navy-deep);
+  line-height:1.32;margin:16px 0 24px;letter-spacing:.01em;text-wrap:balance;
+}
+.hero h1 .hl{
+  background:linear-gradient(transparent 62%, color-mix(in srgb,var(--pink) 42%,transparent) 62%);
+  padding:0 2px;
+}
+.hero p.sub{font-size:17.5px;color:var(--ink);max-width:820px;line-height:2.1}
+.hero p.sub b{color:var(--navy);font-weight:800}
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.proof .p{
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 16px;
+  box-shadow:var(--shadow-sm);
+}
+.proof .n{font-size:27px;font-weight:900;color:var(--pink-deep);font-variant-numeric:tabular-nums;line-height:1.1;letter-spacing:.01em}
+.proof .n small{font-size:14px;font-weight:800}
+.proof .l{font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.6;font-weight:600}
+@media(max-width:760px){.proof{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- generic cards ---------- */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:820px){.g2,.g3{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px 26px;box-shadow:var(--shadow-sm)}
+.card h3{font-size:19px;color:var(--navy);font-weight:800;margin-bottom:10px;letter-spacing:.01em}
+.card p{font-size:15px;color:var(--ink-soft);line-height:1.95}
+
+/* talent cards */
+.talent .no{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--pink-deep);font-weight:600}
+.talent .en{font-size:12px;color:var(--blue);letter-spacing:.12em;font-weight:700;margin-top:4px}
+.talent h3{margin-top:8px;font-size:21px}
+
+/* ---------- reframe / garden ---------- */
+.reframe{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:38px 34px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.reframe .big{font-size:clamp(20px,3vw,26px);font-weight:800;color:var(--navy);line-height:1.7;letter-spacing:.01em}
+.reframe .big .accent{color:var(--pink-deep)}
+.reframe .note{margin-top:18px;font-size:15.5px;color:var(--ink-soft);line-height:2.05}
+.reframe .quote{margin-top:22px;padding-left:18px;border-left:3px solid var(--pink);font-size:15px;color:var(--ink-soft);font-style:normal}
+
+/* ---------- comparison table ---------- */
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:20px;background:var(--panel);box-shadow:var(--shadow-sm)}
+table.cmp{border-collapse:collapse;width:100%;min-width:680px;font-size:14.5px}
+table.cmp th{background:var(--bg2);color:var(--ink-soft);font-size:12.5px;letter-spacing:.06em;text-align:left;padding:14px 18px;font-weight:800;border-bottom:1px solid var(--line)}
+table.cmp th.them{color:var(--ink-soft)}
+table.cmp th.us{color:var(--pink-deep)}
+table.cmp td{padding:15px 18px;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.75}
+table.cmp tr:last-child td{border-bottom:0}
+table.cmp td.axis{font-weight:800;color:var(--navy);width:20%;white-space:nowrap}
+table.cmp td.them{color:var(--ink-soft);width:38%}
+table.cmp td.us{color:var(--ink);width:42%;background:color-mix(in srgb,var(--pink-soft) 55%,transparent);font-weight:600}
+
+/* ---------- before/after ---------- */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:820px){.ba{grid-template-columns:1fr}}
+.ba .box{border-radius:18px;padding:22px 22px;border:1px solid var(--line)}
+.ba .before{background:var(--bg2)}
+.ba .after{background:var(--pink-soft);border-color:color-mix(in srgb,var(--pink) 40%,var(--line))}
+.ba .lab{font-size:12px;font-weight:800;letter-spacing:.1em;margin-bottom:12px;display:inline-block;padding:3px 12px;border-radius:999px}
+.ba .before .lab{color:var(--ink-soft);background:var(--line-soft)}
+.ba .after .lab{color:#fff;background:var(--pink-deep)}
+.ba .msg{font-size:14.5px;line-height:1.9;white-space:pre-line;color:var(--ink)}
+.ba .res{margin-top:14px;font-size:13px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:12px}
+.ba .res b{color:var(--pink-deep);font-weight:800}
+
+/* ---------- stat grid ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.stats{grid-template-columns:1fr}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 22px;box-shadow:var(--shadow-sm);position:relative}
+.stat .flow{font-size:13px;color:var(--ink-soft);font-weight:700;margin-bottom:8px;letter-spacing:.02em}
+.stat .big{font-size:30px;font-weight:900;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1.15;letter-spacing:.005em}
+.stat .big .to{color:var(--blue);font-weight:800;font-size:20px;margin:0 4px}
+.stat .big .up{color:var(--pink-deep)}
+.stat .cap{font-size:13.5px;color:var(--ink-soft);margin-top:10px;line-height:1.7}
+.stat .tagv{position:absolute;top:16px;right:16px;font-size:10.5px;font-weight:800;letter-spacing:.05em;padding:2px 9px;border-radius:999px;background:var(--blue-soft);color:var(--navy)}
+
+/* ---------- scope map ---------- */
+.scope{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:820px){.scope{grid-template-columns:1fr}}
+.scope .s{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 24px;box-shadow:var(--shadow-sm)}
+.scope .s .cat{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:var(--blue);font-weight:600;letter-spacing:.08em}
+.scope .s h3{font-size:18.5px;color:var(--navy);font-weight:800;margin:2px 0 12px}
+.scope .s ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.scope .s li{font-size:14.5px;color:var(--ink-soft);line-height:1.75;padding-left:20px;position:relative}
+.scope .s li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--pink)}
+.scope .s li b{color:var(--ink);font-weight:800}
+
+/* episodes */
+.episodes{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel);box-shadow:var(--shadow-sm)}
+.episodes .ep{display:flex;gap:20px;padding:24px 28px;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+.episodes .ep:last-child{border-bottom:0}
+.episodes .ep:nth-child(odd){background:color-mix(in srgb,var(--bg2) 55%,transparent)}
+.episodes .epn{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:var(--pink-deep);font-weight:600;line-height:1.1;flex:none;width:40px}
+.episodes .epc h3{font-size:17.5px;color:var(--navy);font-weight:800;margin-bottom:6px;line-height:1.5}
+.episodes .epc p{font-size:14.5px;color:var(--ink-soft);line-height:1.9}
+@media(max-width:560px){.episodes .ep{gap:14px;padding:20px 20px}.episodes .epn{width:30px;font-size:24px}}
+
+/* ---------- funnel flow ---------- */
+.funnel{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+.funnel .step{flex:1;min-width:118px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 14px;text-align:center;box-shadow:var(--shadow-sm);position:relative}
+.funnel .step .k{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--blue);font-size:14px;font-weight:600}
+.funnel .step .t{font-size:14.5px;font-weight:800;color:var(--navy);margin-top:4px}
+.funnel .step .d{font-size:11.5px;color:var(--ink-soft);margin-top:5px;line-height:1.6}
+.funnel-note{margin-top:18px;font-size:14.5px;color:var(--ink-soft);text-align:center;line-height:1.9}
+.funnel-note b{color:var(--pink-deep);font-weight:800}
+
+/* ---------- case cards ---------- */
+.case{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px 26px;box-shadow:var(--shadow-sm)}
+.case .seg{font-size:12px;font-weight:800;letter-spacing:.05em;color:#fff;background:var(--navy);display:inline-block;padding:4px 13px;border-radius:999px;margin-bottom:14px}
+.case h3{font-size:17.5px;color:var(--navy);font-weight:800;margin-bottom:14px;line-height:1.5}
+.case ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.case li{font-size:14px;color:var(--ink-soft);line-height:1.7;padding-left:22px;position:relative}
+.case li::before{content:"▲";position:absolute;left:0;top:1px;color:var(--pink);font-size:10px}
+.case li b{color:var(--pink-deep);font-weight:800;font-variant-numeric:tabular-nums}
+
+/* ---------- psychology mini ---------- */
+.psy{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:820px){.psy{grid-template-columns:1fr}}
+.psy .p{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow-sm)}
+.psy .p .th{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.psy .p .th span{font-size:12px;color:var(--blue);font-weight:700;margin-left:6px;letter-spacing:.03em}
+.psy .p p{font-size:13.5px;color:var(--ink-soft);line-height:1.85}
+
+/* ---------- stance ---------- */
+.stance{background:linear-gradient(160deg,var(--navy-deep),var(--navy));border-radius:26px;padding:52px 40px;color:#eaf1fb;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.stance::before{content:"”";position:absolute;top:-10px;right:24px;font-family:"Cormorant Garamond",serif;font-size:200px;color:rgba(255,255,255,.08);line-height:1}
+.stance .e{font-family:"Cormorant Garamond",serif;font-style:italic;color:#d9a9b4;font-size:20px;letter-spacing:.06em;font-weight:600}
+.stance h2{font-size:clamp(21px,3.3vw,29px);font-weight:800;line-height:1.7;margin:12px 0 22px;color:#fff;letter-spacing:.01em}
+.stance h2 em{font-style:normal;color:#eab8c2}
+.stance p{font-size:15.5px;line-height:2.05;color:#cfdcec;max-width:760px}
+.stance p+p{margin-top:14px}
+
+/* ---------- for-whom ---------- */
+.whom{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:820px){.whom{grid-template-columns:1fr}}
+.whom .w{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:14px;padding:18px 22px;box-shadow:var(--shadow-sm)}
+.whom .w .q{font-size:15px;font-weight:800;color:var(--navy);line-height:1.6}
+.whom .w .a{font-size:13.5px;color:var(--ink-soft);margin-top:7px;line-height:1.75}
+.whom .w .a b{color:var(--pink-deep);font-weight:800}
+
+/* ---------- closing ---------- */
+.closing{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:56px 34px;box-shadow:var(--shadow)}
+.closing .e{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--pink-deep);font-size:21px;font-weight:600;letter-spacing:.05em}
+.closing h2{font-size:clamp(22px,3.6vw,32px);font-weight:900;color:var(--navy-deep);margin:14px 0 18px;line-height:1.5;text-wrap:balance}
+.closing p{font-size:16px;color:var(--ink-soft);max-width:640px;margin:0 auto;line-height:2.05}
+.sign{margin-top:34px;padding-top:26px;border-top:1px solid var(--line-soft);display:flex;flex-direction:column;align-items:center;gap:8px}
+.sign img{height:30px;width:auto;opacity:.95}
+.sign .who{font-size:14px;color:var(--ink);font-weight:800}
+.sign .who span{color:var(--ink-soft);font-weight:600}
+
+/* footer */
+footer{padding:40px 22px 60px;text-align:center;color:var(--ink-soft);font-size:12px;line-height:1.9}
+footer .note{max-width:780px;margin:0 auto 14px;font-size:11.5px;opacity:.9}
+
+.mini-note{font-size:12px;color:var(--ink-soft);margin-top:16px;line-height:1.7;opacity:.9}
+.mono{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="row">
+    <img src="merone-logo.png" alt="Merone">
+    <div class="tag">NURTURING&nbsp;CONSULTING</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="wrap">
+  <section class="hero">
+    <div class="kicker">The essence of nurturing</div>
+    <h1>顧客を<span class="hl">"動かす"</span>のではなく、<br>自分から<span class="hl">動きたくなる</span>環境をつくる。</h1>
+    <p class="sub">株式会社Merone・森川くみこのナーチャリングコンサル。<b>掘り起こしは、その入り口にすぎません。</b>売上が上がるプロセスなら、スタッフの指導も、チームのマインドの立て直しも、仕組み化も——<b>結果が出るために、何だってやります。</b>その全体像を、ひとつにまとめました。</p>
+
+    <div class="proof">
+      <div class="p"><div class="n">1.3%<small>→</small>15.5%</div><div class="l">離脱した顧客の復活率（約10倍）</div></div>
+      <div class="p"><div class="n">+22<small>pt</small></div><div class="l">体験参加率（35%→57%）</div></div>
+      <div class="p"><div class="n">90h<small>→</small>3.7h</div><div class="l">追客の初回返信スピード</div></div>
+      <div class="p"><div class="n">64.3%</div><div class="l">面談→成約率（過去最高）</div></div>
+    </div>
+    <p class="mini-note">数値はいずれも実際の支援先での実測値です。クライアント名・個人名は守秘のため伏せ、業種のみ記載しています。集計時期・母数の性質は各項目に注記しています。</p>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 01 一言でいうと -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">What it really is</div>
+    <div class="sec-head"><div class="sec-no">01</div><div class="sec-title">ナーチャリングとは、心にゆっくり水をやること</div></div>
+    <div class="reframe">
+      <div class="big">普通のマーケティングは「どうやって顧客を<span class="accent">動かすか</span>」を考えます。<br>私のマーケティングは「どうやって顧客が<span class="accent">自分から動きたくなるか</span>」を考えます。</div>
+      <div class="note">種をまいた翌日に「もう咲いて」と引っ張れば、根ごと抜けてしまいます。人の心も同じで、締切や警告で追い立てるほど、そっと離れていきます（ブロック・配信解除）。だから私は、咲かせようとしません。<b>咲きたくなる環境を、静かに整えます。</b></div>
+      <div class="quote">この差が、同じ商材・同じ顧客リストでも、結果に何倍もの開きを生みます。実際に、告知文の"型"を変えただけで面談創出率が過去最高になり、逆に追い立てる訴求では集客が前月比マイナス45%・成約ゼロになった例もあります。</div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 02 違い -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">What makes it different</div>
+    <div class="sec-head"><div class="sec-no">02</div><div class="sec-title">普通のマーケコンサルとの、決定的な違い</div></div>
+    <p class="lead" style="margin-bottom:26px">フレームワークの紹介では、顧客は動きません。人が動くまでの「心理の段差」を見つけて、そこだけを埋める——それが違いの源泉です。</p>
+    <div class="tblwrap">
+      <table class="cmp">
+        <thead><tr><th>論点</th><th class="them">一般的なマーケコンサル</th><th class="us">森川くみこのナーチャリング</th></tr></thead>
+        <tbody>
+          <tr><td class="axis">ゴール設定</td><td class="them">顧客を動かす／コンバージョンさせる</td><td class="us">顧客が自分から動きたくなる環境をつくる</td></tr>
+          <tr><td class="axis">使う枠組み</td><td class="them">4P・AIDA など一般論のあてはめ</td><td class="us">その顧客固有の「動けない心理」を特定して撃つ</td></tr>
+          <tr><td class="axis">数字の見方</td><td class="them">先方指定の指標だけを最適化</td><td class="us">渡された全データから、真のボトルネック（多くは"時間"）を疑う</td></tr>
+          <tr><td class="axis">緊急性の作り方</td><td class="them">期限・先着・警告で煽る</td><td class="us">圧ゼロ・警告ゼロ。逃げ道（日程変更）を先に手渡す</td></tr>
+          <tr><td class="axis">文章の単位</td><td class="them">テンプレの一斉配信</td><td class="us">1通1アクション。一斉配信でも「個別連絡」の温度で届ける</td></tr>
+          <tr><td class="axis">訴求の設計</td><td class="them">全員に同じメッセージ</td><td class="us">タイプ別（主導／分析／促進／支持）に言葉と支え方を分ける</td></tr>
+          <tr><td class="axis">効果の証明</td><td class="them">感覚・事例ベース</td><td class="us">A/Bテストで実証（キャンセル率−14.9pt／回答率+10.8pt 等）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 03 3つの才能 -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">Three core talents</div>
+    <div class="sec-head"><div class="sec-no">03</div><div class="sec-title">効き目の正体は、3つの力</div></div>
+    <p class="lead" style="margin-bottom:26px">テクニックではありません。この3つの力から、すべての配信文と設計が生まれています。</p>
+    <div class="grid g3">
+      <div class="card talent">
+        <div class="no">01</div><div class="en">EMPATHY RESOLUTION</div>
+        <h3>共感解像度</h3>
+        <p>「30代女性」では止まりません。「夜22時、子どもを寝かしつけて、布団の中で目だけで読んでいる人」——読む人の指先と気持ち、画面の明るさまで想像します。だから生活に馴染む言葉が書けます。</p>
+      </div>
+      <div class="card talent">
+        <div class="no">02</div><div class="en">TRANSLATION</div>
+        <h3>翻訳力</h3>
+        <p>「感想を送って」「キャンセルしないで」という<b>お願い</b>を、そのまま頼みません。顧客への<b>贈り物</b>に翻訳します。要求は心の壁を作り、贈り物は心を開く。同じ依頼が"自分のため"に変わった瞬間、人は動きます。</p>
+      </div>
+      <div class="card talent">
+        <div class="no">03</div><div class="en">PRESSURE SENSOR</div>
+        <h3>圧センサー</h3>
+        <p>強い言葉・赤文字・カウントダウン・重複配信——普通は見えない「ミリ単位の圧」を見抜いて抜きます。人は"動かされている"と感じた瞬間に止まる。特に女性は、圧をかけるとYesがNoに反転します。</p>
+      </div>
+    </div>
+
+    <!-- before/after -->
+    <div style="margin-top:34px">
+      <p class="lead" style="margin-bottom:16px"><b style="color:var(--navy)">同じ依頼が、こう変わります。</b>（ヒアリングシートのリマインド）</p>
+      <div class="ba">
+        <div class="box before">
+          <span class="lab">BEFORE ｜ 普通の催促</span>
+          <div class="msg">⚠️注意⚠️
+まだヒアリングシートが完了していません！
+期限が迫っています！至急対応してください！</div>
+          <div class="res">→ 読んだ人の半分が<b style="color:var(--ink-soft)">ブロック</b></div>
+        </div>
+        <div class="box after">
+          <span class="lab">AFTER ｜ くみこの変換</span>
+          <div class="msg">ヒアリングシートの記載がないと、
+正しくカウンセリングができません…。
+
+たった1分で回答ができるので
+すぐに回答お願いしますね☺️♡</div>
+          <div class="res">「理由 → ハードル下げ → 優しいトーン」の3点セット。<b>回答率+10.8pt</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 04 数字 -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">Proven in numbers</div>
+    <div class="sec-head"><div class="sec-no">04</div><div class="sec-title">結果は、ちゃんと数字で出ています</div></div>
+    <p class="lead" style="margin-bottom:26px">感覚の話ではありません。実際の支援先で計測した、代表的な変化です。</p>
+    <div class="stats">
+      <div class="stat"><span class="tagv">実測</span><div class="flow">離脱した顧客の掘り起こし</div><div class="big"><span class="mono">1.3%</span><span class="to">→</span><span class="up mono">15.5%</span></div><div class="cap">定型の追撃配信を"共感型"に変えて、復活率が約10倍に。「お子さま大丈夫でしたか？」の一言で返信率100%（3/3）。</div></div>
+      <div class="stat"><span class="tagv">実測</span><div class="flow">体験会のドタキャン対策</div><div class="big"><span class="up mono">+10.3</span><span style="font-size:18px;color:var(--blue)">pt</span></div><div class="cap">実施率48.8%→59.1%。7日以上先の予約を71件→<b style="color:var(--pink-deep)">0件</b>に。予約から実施までの"時間"を詰めるのが要でした。</div></div>
+      <div class="stat"><span class="tagv">実測・初速</span><div class="flow">体験レッスンの参加率</div><div class="big"><span class="mono">35%</span><span class="to">→</span><span class="up mono">57%</span></div><div class="cap">体験前のひと手間（1to1）で+22pt・約1.6倍。※立ち上がりの初速値・母数小。</div></div>
+      <div class="stat"><span class="tagv">実測</span><div class="flow">配信フロー全体の再設計</div><div class="big"><span class="up mono">−14.9</span><span style="font-size:18px;color:var(--blue)">pt</span></div><div class="cap">キャンセル率46.2%→31.3%。同時に回答率+10.8pt・参加予定2.5倍。配信数は20通超→10通前後へ半減。</div></div>
+      <div class="stat"><span class="tagv">実測</span><div class="flow">体験後の追客スピード</div><div class="big"><span class="mono">90h</span><span class="to">→</span><span class="up mono">3.7h</span></div><div class="cap">初回返信の中央値を約1/24に短縮。返信率+8.3pt、成約率は約1.8倍に。</div></div>
+      <div class="stat"><span class="tagv">実測</span><div class="flow">勉強会からの成約</div><div class="big"><span class="up mono">64.3%</span></div><div class="cap">面談→成約率が過去最高に（前回まで13〜18%）。告知の"型"を勝ちパターンで再現。</div></div>
+    </div>
+    <p class="mini-note">※ すべて実際の支援先の実測値です（守秘のため社名・個人名は伏せています）。「初速」「母数小」と付した項目は立ち上がり時点・少数サンプルの値、別途「試算」と明記した数値は実証値からの逆算です。実測と試算は分けて扱っています。</p>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 05 掘り起こしだけじゃない -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">Far beyond re-engagement</div>
+    <div class="sec-head"><div class="sec-no">05</div><div class="sec-title">掘り起こしだけじゃない。結果のためなら、何でもやる</div></div>
+    <p class="lead" style="margin-bottom:26px">配信文はほんの一部です。売上が上がるプロセスなら、領域を選びません。実際にカバーしてきた範囲です。</p>
+    <div class="scope">
+      <div class="s"><div class="cat">A</div><h3>ナーチャリング設計・配信文</h3><ul>
+        <li>登録直後〜面談前〜当日〜キャンセル後まで、<b>シナリオ全体を再設計</b>（配信数を20通超→10通前後へ半減）</li>
+        <li>掘り起こし・リマインド・告知文を1通ずつ作り込み、A/Bは<b>検定の設計まで自分で置く</b></li>
+        <li>先方が動けない時は、自分で配信システムに入り、全体を把握してでも前に進める</li>
+      </ul></div>
+      <div class="s"><div class="cat">B</div><h3>スタッフ指導・チームのマインドアップ</h3><ul>
+        <li>クローザーの<b>成約率と当事者意識を査定</b>し、処遇・育成方針まで提言</li>
+        <li>現場の困りごとから、対応マニュアルと返信テンプレ集を整備（引き継ぎ基準つき）</li>
+        <li>タイプ別（主導／分析／促進／支持）に、褒め方・声かけ・任せ方を変えて底上げ</li>
+      </ul></div>
+      <div class="s"><div class="cat">C</div><h3>仕組み化・ツール開発・自動化</h3><ul>
+        <li>面談・クローザーの数値を<b>自動可視化するダッシュボードを内製</b>（二重入力を解消）</li>
+        <li>集客の入口になる診断ツール・添削チェッカーを開発</li>
+        <li>システム障害も自力で切り分け、別経路で<b>追加コストゼロで復旧</b></li>
+      </ul></div>
+      <div class="s"><div class="cat">D</div><h3>LP・広告・クリエイティブ制作</h3><ul>
+        <li>広告→LPの<b>訴求とファーストビューを設計・制作</b>（游ゴシック・本人手書き素材まで）</li>
+        <li>競合LPを分解し、「主役を顧客本人に置く」戦略に転換</li>
+        <li>受け身層を入口で外す、自己選別のコピー設計</li>
+      </ul></div>
+      <div class="s"><div class="cat">E</div><h3>ファネル全体の設計</h3><ul>
+        <li>広告→LP→LINE→ナーチャリング→面談→成約→フォローを<b>一気通貫で設計</b></li>
+        <li>ファネル構造そのものを転換（"広告で予約"から"LINE内で予約"へ 等）</li>
+        <li>「本当の詰まり」を全データから特定し、そこだけを直す</li>
+      </ul></div>
+      <div class="s"><div class="cat">F</div><h3>経営・戦略・数値の設計</h3><ul>
+        <li>ROASを<b>分解式で逆算</b>し、必要条件（獲得単価・面談到達率）を数字で特定</li>
+        <li>数百件の会話ログを分析し、成約に効くメッセージを言語化</li>
+        <li>提携・送客アライアンスの設計まで踏み込む</li>
+      </ul></div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 06 そこまでやるのか -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">Whatever it takes</div>
+    <div class="sec-head"><div class="sec-no">06</div><div class="sec-title">「そこまでやるの？」を、やります</div></div>
+    <p class="lead" style="margin-bottom:26px">結果が出るためなら、担当領域の外でも手を動かします。すべて、実際にあった話です。</p>
+    <div class="episodes">
+      <div class="ep"><div class="epn">01</div><div class="epc"><h3>担当者が動けないなら、自分が入る</h3><p>先方の担当者が手一杯で、配信システムの画面を用意してもらうことすら難しかったとき。私が自分でログインし、45枚の画面と実際のやり取りまで確認して、シナリオ全体を把握し直しました。</p></div></div>
+      <div class="ep"><div class="epn">02</div><div class="epc"><h3>現場の「困った」から、武器をつくる</h3><p>架電やカスタマー対応の担当者の生の声（「無料と伝えているのに疑われる。返す言葉のテンプレが欲しい」など）を起点に、曖昧な返信用・お怒り案件用の対応マニュアルと返信テンプレ集を整備。連絡の引き継ぎ基準まで設計しました。</p></div></div>
+      <div class="ep"><div class="epn">03</div><div class="epc"><h3>仕組みが止まっても、止めない</h3><p>セールス数字の自動連携が、システム側の制限で全て止まったとき。原因を切り分け、別の経路を新しく通して恒久的に復旧。追加コストゼロで、4つの自動処理すべてを直しました。</p></div></div>
+      <div class="ep"><div class="epn">04</div><div class="epc"><h3>人の配置まで、踏み込む</h3><p>クローザー一人ひとりの成約率と当事者意識を見て、「この人は絶対に残す」「この役割は見直す」まで提言。タイプ別の指導方針も用意しました。売上は結局、その場に立つ人で決まるからです。</p></div></div>
+      <div class="ep"><div class="epn">05</div><div class="epc"><h3>動線のバグも、自分で潰す</h3><p>広告から来たお客さまがフォームで止まっていた原因のひとつ、表示の不具合を私自身が修正しました。配信設計だけでなく、技術的な詰まりまで見つけて潰します。</p></div></div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 07 一気通貫 -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">End to end</div>
+    <div class="sec-head"><div class="sec-no">07</div><div class="sec-title">集客から成約後フォローまで、ひとつの手で</div></div>
+    <p class="lead" style="margin-bottom:26px">部分最適では、つながり目でこぼれます。だから入口から出口まで、同じ設計思想で通します。</p>
+    <div class="funnel">
+      <div class="step"><div class="k">01</div><div class="t">広告</div><div class="d">動ける人だけが反応する訴求</div></div>
+      <div class="step"><div class="k">02</div><div class="t">LP</div><div class="d">ファーストビューで自己選別</div></div>
+      <div class="step"><div class="k">03</div><div class="t">LINE登録</div><div class="d">連携率を上げる導線設計</div></div>
+      <div class="step"><div class="k">04</div><div class="t">ナーチャリング</div><div class="d">1通1アクションで温める</div></div>
+      <div class="step"><div class="k">05</div><div class="t">面談</div><div class="d">座る前に温度を上げきる</div></div>
+      <div class="step"><div class="k">06</div><div class="t">成約</div><div class="d">クローザー指導で歩留まり改善</div></div>
+      <div class="step"><div class="k">07</div><div class="t">フォロー</div><div class="d">キャンセルも共感で復活</div></div>
+    </div>
+    <p class="funnel-note">面談の成約は、<b>座らせる"前"</b>で決まります。だからナーチャリングは、ファネル全体の温度設計そのものです。</p>
+    <p class="mini-note" style="text-align:center;max-width:820px;margin:16px auto 0">実際に1社の中で、広告の数値設計 → 競合を分解したLP → LINE内予約への構造転換 → 検定設計込みのA/B配信 → 会話ログ分析による面談トークの言語化 → クローザーの査定と指導 → キャンセル後フォローの自動化まで、連続してカバーしています。ここが「掘り起こしだけの外注」との決定的な違いです。</p>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 08 実例 -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">Case archetypes</div>
+    <div class="sec-head"><div class="sec-no">08</div><div class="sec-title">実際に、こんな変化が起きています</div></div>
+    <p class="lead" style="margin-bottom:26px">守秘のため社名は伏せ、業種で記載しています。数値はすべて実測値です。</p>
+    <div class="grid g2">
+      <div class="case">
+        <span class="seg">金融教育スクール様</span>
+        <h3>体験会の"ドタキャン"を、時間の設計で止めた</h3>
+        <ul>
+          <li>体験会の実施率 <b>48.8%→59.1%</b>（+10.3pt）</li>
+          <li>7日以上先の予約を <b>71件→0件</b>に（予約〜実施を短縮）</li>
+          <li>体験前クイズのA/Bで、自社設計案が <b>79%</b>の支持（n=48）</li>
+          <li>提携先への送客ファネルで累計 <b>335名</b>成約</li>
+        </ul>
+      </div>
+      <div class="case">
+        <span class="seg">子育て世代向けサービス様</span>
+        <h3>「催促」を「共感」に変え、掘り起こしが10倍に</h3>
+        <ul>
+          <li>キャンセル復活率 <b>1.3%→15.5%</b>（約10倍）</li>
+          <li>共感型フォローで、キャンセル後の返信率 <b>100%</b>（3/3）</li>
+          <li>配信フロー再設計でキャンセル率 <b>−14.9pt</b>・回答率 +10.8pt</li>
+          <li>告知の"型"を変え、面談創出率 <b>過去最高</b>（逆に追撃型は成約0）</li>
+        </ul>
+      </div>
+      <div class="case">
+        <span class="seg">女性向けキャリアスクール様</span>
+        <h3>体験の"前後"を設計し、参加も成約も引き上げた</h3>
+        <ul>
+          <li>体験前1to1で参加率 <b>35%→57%</b>（+22pt・初速）</li>
+          <li>体験後追客の初回返信 <b>90時間→3.7時間</b>／成約 約1.8倍</li>
+          <li>LINE連携率 <b>49.4%→57.9%</b></li>
+          <li>勉強会の面談→成約率 <b>64.3%</b>（過去最高）</li>
+        </ul>
+      </div>
+      <div class="case">
+        <span class="seg">起業・SNS支援スクール様</span>
+        <h3>「売上半減の主犯」を、数字で名指しした</h3>
+        <ul>
+          <li>ファネル診断で主因は<b>成約率（着座数ではない）</b>と特定</li>
+          <li>等身大ロールモデル経由の成約率 <b>50%</b> vs 代表発信 17.65%</li>
+          <li>HR面とマーケ面の<b>両輪で支援</b></li>
+          <li>提携・登壇送客のアライアンスまで設計</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mini-note">※ 業種名はぼかしています。集計時期は主に直近半年〜1年、一部は立ち上がり初速・母数小の値を含みます（各カード内で明記）。</p>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 09 なぜ効くのか -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">Why it works</div>
+    <div class="sec-head"><div class="sec-no">09</div><div class="sec-title">感覚ではなく、心理の設計です</div></div>
+    <p class="lead" style="margin-bottom:26px">なぜ効くのか、きちんと説明できます。すべての原則に、裏づけがあります。</p>
+    <div class="psy">
+      <div class="p"><div class="th">圧を抜く<span>心理的リアクタンス</span></div><p>自由を奪われそうになると、人は逆の行動を取ります。だから「まだ完了していません！」でブロックが起き、「都合が悪ければ日程変更できますね」で逆に留まります。</p></div>
+      <div class="p"><div class="th">催促を贈り物に<span>返報性の原理</span></div><p>人はもらった相手に返したくなります。催促すべき瞬間にこそ、価値（カルーセル・気づかいの一言）を贈る。追い立てるより、ずっと返ってきます。</p></div>
+      <div class="p"><div class="th">「なぜ」を必ず添える<span>理由づけ効果</span></div><p>「使わせて」は6割、「急いでいるので使わせて」は9割超が承諾する——理由がつくだけで人は協力します。依頼には必ず"なぜ"をセットにします。</p></div>
+      <div class="p"><div class="th">1通に1つだけ<span>認知負荷とコミットメント</span></div><p>一度に2つ以上頼むと、人は全部やめます。1通1アクション＋所要時間の明示でハードルを1/10に。小さなYESの積み重ねが、大きなYESに繋がります。</p></div>
+      <div class="p"><div class="th">親密なのに、失礼じゃない<span>情動的距離変調</span></div><p>距離を縮める言葉と、敬意で保つ言葉を同時に効かせ、「個別連絡の温度」に着地させます。縮めるだけは馴れ馴れしく、保つだけは業務連絡。両立が技術です。</p></div>
+      <div class="p"><div class="th">記憶に残す<span>ピーク・エンドの法則</span></div><p>絵文字を全文に散らすと、感情の山が消えます。ピーク1点に絞り、最後の一言で印象を「楽しみ」に上書きする。読後感まで設計します。</p></div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 09 姿勢 -->
+<div class="wrap">
+  <section>
+    <div class="stance">
+      <div class="e">The stance</div>
+      <h2>実のところ、私は<em>マーケティングをしていません</em>。<br>目の前の人を、一人の人として大切にしているだけです。<br>その結果、お客さまが<em>自分から動きます</em>。</h2>
+      <p>お客さまは「数字」ではなく「一人の人間」だと思っています。その人の人生が良くなることを、自分の利益より先に考えています。無理やり動かすことが、心から苦手です。だから、追い立てません。</p>
+      <p>そして——結果が出るためなら、領域は選びません。配信文でも、スタッフの指導でも、仕組みづくりでも、経営数字の設計でも。<b style="color:#eab8c2;font-weight:800">売上が上がるプロセスなら、何だってやります。</b>テクニックは真似できても、この姿勢だけは、代わりがききません。</p>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- 10 こんな企業に -->
+<div class="wrap">
+  <section>
+    <div class="eyebrow">For whom</div>
+    <div class="sec-head"><div class="sec-no">10</div><div class="sec-title">こんな課題に、効きます</div></div>
+    <div class="whom">
+      <div class="w"><div class="q">LINE・プロLINEはあるのに、温まらない</div><div class="a">配信を"催促"から"価値提供"に組み替え、<b>面談前の温度</b>を上げきります。</div></div>
+      <div class="w"><div class="q">面談・体験のドタキャンが多い</div><div class="a">予約〜実施の<b>"時間"を詰める</b>設計と、共感型のフォローで実施率を上げます。</div></div>
+      <div class="w"><div class="q">掘り起こしをしても、反応が薄い</div><div class="a">定型の追撃を、一人ひとりへの<b>贈り物</b>に翻訳し直します。復活率が一桁変わります。</div></div>
+      <div class="w"><div class="q">スタッフによって成約率がバラつく</div><div class="a">勝ちパターンを<b>言語化・仕組み化</b>し、タイプ別に指導して底上げします。</div></div>
+      <div class="w"><div class="q">広告は回るのに、成約に繋がらない</div><div class="a">入口から出口まで通しで見て、<b>本当の詰まり</b>だけを直します。</div></div>
+      <div class="w"><div class="q">受け身のお客さまばかり集まる</div><div class="a">コピーで<b>自己選別</b>を起こし、動ける人だけが入る入口に変えます。</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- CLOSING -->
+<div class="wrap">
+  <section style="padding-top:36px">
+    <div class="closing">
+      <div class="e">Let's begin, quietly.</div>
+      <h2>「もう一度だけ、やってみようかな」<br>そう思えたなら、それがはじまりの合図です。</h2>
+      <p>顧客を追い立てず、自分から動きたくなる場をつくる。掘り起こしから、スタッフの育成、仕組み化、経営数字の設計まで。結果が出るために、私たちは何だってやります。まずは、いまのファネルと配信を見せてください。</p>
+      <div class="sign">
+        <img src="merone-logo.png" alt="Merone">
+        <div class="who">森川くみこ <span>／ 株式会社Merone 代表</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="note">本資料に記載の数値は、いずれも実際の支援先での実測値です。守秘のためクライアント名および個人名は伏せ、業種のみ記載しています。「初速」「母数小」と付した数値は立ち上がり時点・少数サンプル、「試算」と明記した数値は実証値からの逆算であり、実測値とは区別しています。</div>
+  © 株式会社Merone｜Nurturing Consulting
+</footer>
+
+</body>
+</html>
