@@ -229,9 +229,9 @@ footer a{color:var(--navy);font-weight:700}
       <div class="gift">
         <div class="no"><small>GIFT</small>03</div>
         <div>
-          <h3>掘り起こしテンプレート2通＋30分の診断面談</h3>
-          <p>失注リストへの「気遣いの1通」と、未返信の方への2通目。そのままコピーして使えます。ご希望の方には、診断結果を一緒に見る30分の面談（無料）。</p>
-          <span class="pill pk">お名前を残していただいた方へ</span>
+          <h3>ナーチャリング無料コンサル30分【限定3社】</h3>
+          <p>診断の結果を一緒に見ながら、直す順番を決める30分（オンライン）。売り込みはしません。</p>
+          <span class="pill pk">限定3社</span>
         </div>
       </div>
     </div>
@@ -389,7 +389,7 @@ footer a{color:var(--navy);font-weight:700}
       <div class="culprit" id="culprit"></div>
 
       <div class="ctaline" style="margin-top:22px">
-        <a class="btn primary" href="#gift3">特典3点セットを受け取る</a>
+        <a class="btn primary" href="#gift3">無料コンサル30分に申し込む</a>
         <a class="btn ghost" href="#checker">配信文の圧チェッカーへ</a>
         <button class="btn ghost" type="button" id="redo">もう一度診断する</button>
       </div>
@@ -444,8 +444,8 @@ footer a{color:var(--navy);font-weight:700}
 <div class="wrap">
   <section id="gift3">
     <div class="eyebrow">Gift 03</div>
-    <h2 class="sec-title">特典3点セットを受け取る</h2>
-    <p class="lead">お名前と連絡先を残していただいた方に、掘り起こしテンプレート2通をこの場でお渡しします。ご希望の方には、診断結果を一緒に見る30分の面談（無料・オンライン）もご案内します。</p>
+    <h2 class="sec-title">ナーチャリング無料コンサル30分【限定3社】</h2>
+    <p class="lead">診断の結果を一緒に見ながら、直す順番を決める30分です（無料・オンライン）。売り込みはしません。弊社の準備の都合で、3社までとさせてください。</p>
 
     <div class="card" style="margin-top:18px" id="formcard">
       <form class="form" id="leadform" novalidate>
@@ -453,10 +453,9 @@ footer a{color:var(--navy);font-weight:700}
         <div class="fld"><label>お名前</label><input type="text" id="f_name" autocomplete="name" placeholder="山田 花子" required></div>
         <div class="fld"><label>メールアドレス</label><input type="email" id="f_mail" autocomplete="email" placeholder="hanako@example.com" required></div>
         <div class="fld"><label>LINE ID または お電話番号<small>任意</small></label><input type="text" id="f_line" placeholder="LINEでのやり取りをご希望の方"></div>
-        <label class="chkbox"><input type="checkbox" id="f_mendan"><div><div class="t">30分の診断面談を希望する（無料・オンライン）</div><div class="d">診断の結果を一緒に見ながら、直す順番を決める30分です。売り込みはしません。弊社の準備の都合で、10月は5社までとさせてください。</div></div></label>
         <div class="fld"><label>いま一番気になっていること<small>任意</small></label><input type="text" id="f_note" placeholder="例：失注リストが300件眠っている"></div>
-        <button class="btn primary" type="submit" id="send">特典を受け取る</button>
-        <div class="st" id="formst">入力情報は特典のお渡しと面談のご連絡にのみ使用します。</div>
+        <button class="btn primary" type="submit" id="send">無料コンサル30分に申し込む</button>
+        <div class="st" id="formst">入力情報は日程のご連絡にのみ使用します。</div>
       </form>
     </div>
 
@@ -464,62 +463,12 @@ footer a{color:var(--navy);font-weight:700}
     <div class="thanks" id="thanks">
       <div class="card">
         <div class="eyebrow" style="margin-bottom:2px">Thank you</div>
-        <h3 style="font-size:20px;color:var(--navy);font-weight:900;line-height:1.5">ありがとうございます。<br>特典はこの下に、そのまま置いておきます。</h3>
-        <p class="note" style="margin-top:8px" id="thanksnote">このページはブックマークしていただければ、いつでも戻ってこられます。面談をご希望の方には、2営業日以内に森川から日程を1〜2枠ご提案します。</p>
-
+        <h3 style="font-size:20px;color:var(--navy);font-weight:900;line-height:1.5">お申し込み、ありがとうございます。</h3>
+        <p class="note" style="margin-top:8px" id="thanksnote">限定3社のため、お受けできるかどうかを含めて、2営業日以内に森川からご連絡します。日程は1〜2枠ご提案しますので、合う枠をお選びください。</p>
         <div class="dl">
           <a href="../pamphlet/" target="_blank" rel="noopener">ナーチャリングコンサルのご案内<span>ひらく</span></a>
+          <a href="#checker">配信文の圧チェッカーをもう一度使う<span>もどる</span></a>
         </div>
-
-        <h3 style="font-size:16px;color:var(--navy);font-weight:800;margin-top:22px">掘り起こしテンプレート：2通で止める・3択で聞く</h3>
-        <p class="note">{お名前}を差し替えてお使いください。1通目は日程を出さず、気遣いと3択だけ。2通目は未返信の方にだけ。それ以上は追わず、返信があった方とだけ会話します。</p>
-
-        <div class="tpl">
-          <div class="h"><b>1通目：個別のお声がけ（3択）</b><button class="btn sm ghost" type="button" data-copy="tpl1">コピー</button></div>
-<pre id="tpl1">{お名前}さん！その後気になったので、個別にお声がけさせていただきました☺️
-
-先日はご都合が合わず、お話しする機会ができずに
-{お名前}さんがお元気だったか、実は気になっていました。。
-
-今月、{ご案内したい内容}を行っているのですが、
-{お名前}さんはご興味ありますか？？
-
-番号で教えてくださいませっ💡
-
-① 興味がある！！
-② 日程次第です。。！
-③ 今はあまり興味がない</pre>
-          <div class="m">③の逃げ道を置くから、返信できます。返信後の3通目は作り置きせず、いただいた返信を見てそのつど書きます。日程を提案するときは<b>1〜2枠だけ</b>（弊社実測：勝ち型は平均1.5枠、22枠の羅列は選べません）。</div>
-        </div>
-
-        <div class="tpl">
-          <div class="h"><b>2通目：2日後・未返信の方だけ</b><button class="btn sm ghost" type="button" data-copy="tpl2">コピー</button></div>
-<pre id="tpl2">{お名前}さん、ちなみに{○}日前にお送りしたメッセージって、届いておりますか。。？
-
-ご返信がなかったので、配信エラーかな…と、心配になってご連絡してしまいました💦</pre>
-          <div class="m">これで返信がなければ追いません。</div>
-        </div>
-
-        <div class="tpl">
-          <div class="h"><b>キャンセル直後：共感の一言</b><button class="btn sm ghost" type="button" data-copy="tpl3">コピー</button></div>
-<pre id="tpl3">{お名前}さん、その後お変わりないですか？
-先日はお会いできず残念でしたが、何よりお身体が一番ですので、どうぞご無理なさらないでくださいね。</pre>
-          <div class="m">日程の話はしません。弊社支援先では「お子さまの体調、大丈夫でしたか？」の一言で<b>返信率100%</b>（3件中3件・母数小）。追撃型（特別枠・ラストチャンス）は9件中0件でした。</div>
-        </div>
-
-        <h3 style="font-size:16px;color:var(--navy);font-weight:800;margin-top:22px">配信文を出す前の8項目</h3>
-        <div class="tpl">
-          <div class="h"><b>圧チェック8項目</b><button class="btn sm ghost" type="button" data-copy="tpl8">コピー</button></div>
-<pre id="tpl8">□ 1通の中に、お願いが2つ以上ないか
-□ 警告語（まだ・無断・ラスト・先着・至急・絶対）がないか
-□ 赤文字や「！」の連続など、強調が過剰でないか
-□ 所要時間（2秒・1分）が書いてあるか
-□ 「なぜ」が説明されているか
-□ 250〜300字以内か（スクロール不要か）
-□ 同じ絵文字を2回使っていないか
-□ 日付と曜日が合っているか（声に出して読んで違和感がないか）</pre>
-        </div>
-
         <div class="ctaline">
           <a class="btn ghost" href="#top">ページの先頭へ</a>
         </div>
@@ -781,14 +730,13 @@ footer a{color:var(--navy);font-weight:700}
     var row={
       run_id:'nurture-gift', task_key:'l_'+Date.now()+'_'+Math.floor(Math.random()*1000000), done:true,
       owner_depts:'nurture-gift', owner_members:name.slice(0,40),
-      memo:JSON.stringify({v:1,name:name,company:company,mail:mail,line:$('f_line').value.trim(),mendan:$('f_mendan').checked,src:SRC,price:(A.price||''),diag:DIAG,note:$('f_note').value.trim(),at:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)}),
+      memo:JSON.stringify({v:1,name:name,company:company,mail:mail,line:$('f_line').value.trim(),mendan:true,src:SRC,price:(A.price||''),diag:DIAG,note:$('f_note').value.trim(),at:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)}),
       link_url:'', updated_at:new Date().toISOString()
     };
     $('send').disabled=true; st.className='st'; st.textContent='送信しています…';
     function showThanks(sent){
       $('formcard').classList.add('hidden'); $('thanks').classList.add('on');
-      if(!sent){ $('thanksnote').innerHTML='通信の不具合で送信が完了できませんでした。お手数ですが、特典はこのままお持ち帰りください。面談をご希望の場合は <a href="https://merone.co.jp" target="_blank" rel="noopener">merone.co.jp</a> からご連絡ください。'; }
-      else if(!$('f_mendan').checked){ $('thanksnote').textContent='このページはブックマークしていただければ、いつでも戻ってこられます。面談をご希望になった場合も、このページからいつでもお申し出いただけます。'; }
+      if(!sent){ $('thanksnote').innerHTML='通信の不具合で送信が完了できませんでした。お手数ですが、<a href="https://merone.co.jp" target="_blank" rel="noopener">merone.co.jp</a> からご連絡ください。'; }
       setTimeout(function(){ document.getElementById('gift3').scrollIntoView({behavior:'smooth',block:'start'}); },50);
     }
     if(DEMO){ showThanks(true); return; }
