@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>特典申込リスト｜Merone</title>
+<style>
+:root{
+  --bg:#eef4fa; --panel:#ffffff; --navy:#26405f; --pink:#cf8f9c; --pinkDeep:#bd7886;
+  --blue:#7fb0d2; --yellow:#e6c35c; --ink:#3f3a3c; --line:#d9e4ef;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.7; -webkit-overflow-scrolling:touch;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 60px;}
+.hdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.hdr img{height:26px;display:block;}
+.hdr h1{font-size:19px;color:var(--navy);font-weight:800;}
+.card{background:var(--panel);border-radius:18px;padding:18px;margin-top:14px;box-shadow:0 4px 16px rgba(38,64,95,.08);}
+.card h2{font-size:15px;color:var(--navy);margin-bottom:10px;font-weight:800;}
+.btn{border:none;border-radius:999px;padding:10px 18px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;
+  background:linear-gradient(135deg,var(--pinkDeep),var(--pink));color:#fff;}
+.btn.blue{background:#e7f0f8;color:var(--navy);}
+.btn.line{background:#fff;border:1.5px solid var(--line);color:var(--navy);}
+input[type=password],input[type=text]{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:16px;font-family:inherit;outline:none;background:#fbfdfe;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px;}
+th{background:#eaf3fa;color:var(--navy);padding:7px 8px;text-align:left;white-space:nowrap;position:sticky;top:0;}
+td{padding:7px 8px;border-bottom:1px solid #eef2f6;white-space:nowrap;}
+.tbox{overflow-x:auto;max-height:560px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;}
+.del{color:var(--pinkDeep);cursor:pointer;font-weight:800;padding:2px 6px;}
+.sum{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+.sumb{flex:1;min-width:150px;background:#fbfdfe;border:1px solid var(--line);border-radius:14px;padding:10px 12px;}
+.sumb .n{font-size:22px;font-weight:900;color:var(--navy);}
+.sumb .l{font-size:11.5px;color:#7a8ba0;font-weight:700;}
+.dist{margin-top:4px;}
+.dist .row{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:12.5px;}
+.dist .lbl{width:170px;font-weight:800;color:var(--navy);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.dist .bg{flex:1;height:12px;background:#eef4f9;border-radius:999px;overflow:hidden;}
+.dist .bf{height:100%;border-radius:999px;display:block;}
+.dist .ct{width:48px;text-align:right;color:#7a8ba0;font-weight:700;}
+.badge{display:inline-block;border-radius:999px;padding:2px 10px;font-size:11px;font-weight:800;color:#fff;background:var(--pink);}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:middle;}
+.dots{white-space:nowrap;}
+.muted{font-size:12.5px;color:#7a8ba0;}
+#hlog{font-size:12.5px;margin-top:8px;white-space:pre-wrap;font-family:Menlo,monospace;background:#fbfdfe;border:1px solid var(--line);border-radius:10px;padding:10px;display:none;}
+#dbg{font-size:11.5px;margin-top:8px;white-space:pre-wrap;font-family:Menlo,monospace;background:#fbfdfe;border:1px solid var(--line);border-radius:10px;padding:10px;display:none;color:#607289;}
+#gate{max-width:380px;margin:80px auto;text-align:center;}
+#gate .card{padding:26px 22px;}
+#gate input{width:100%;text-align:center;margin-top:12px;}
+#gate .btn{width:100%;margin-top:14px;padding:13px;}
+.topbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;align-items:center;}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px;}
+.filters label{font-size:12.5px;color:var(--navy);font-weight:700;display:flex;align-items:center;gap:6px;}
+.filters input[type=text]{width:240px;font-size:13px;padding:8px 10px;}
+.inputsList{display:flex;flex-direction:column;gap:2px;}
+.inputsList .irow{display:flex;gap:10px;font-size:12px;padding:3px 0;border-bottom:1px dashed var(--line);white-space:normal;}
+.inputsList .ik{width:160px;flex-shrink:0;color:var(--navy);font-weight:700;}
+.inputsList .iv{flex:1;color:var(--ink);word-break:break-all;white-space:normal;}
+.copySuccess{color:var(--pinkDeep);font-weight:800;}
+@media(max-width:640px){
+  .dist .lbl{width:120px;}
+  .filters input[type=text]{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="card">
+    <h2>特典申込リスト｜管理ページ</h2>
+    <p class="muted">あいことばを入力してください</p>
+    <input type="password" id="pw" placeholder="あいことば">
+    <button class="btn" id="pwBtn">ひらく</button>
+    <p class="muted" id="pwNg" style="display:none;color:#bd7886;font-weight:800;margin-top:8px;">あいことばが違います</p>
+  </div>
+</div>
+
+<div class="wrap" id="main" style="display:none;">
+  <div class="hdr">
+    <img src="../merone-logo.png" alt="Merone">
+    <h1>特典申込リスト 管理ページ</h1>
+  </div>
+  <div class="topbar">
+    <button class="btn" id="btnReload">再読込</button>
+    <button class="btn blue" id="btnCsv">CSVをダウンロード</button>
+    <button class="btn line" id="btnHealth">動作チェック</button>
+    <span class="muted" id="lastLoad"></span>
+  </div>
+  <div id="hlog"></div>
+  <div id="dbg"></div>
+  <p class="muted" id="errLine" style="display:none;color:#bd7886;font-weight:800;margin-top:8px;"></p>
+
+  <div class="card">
+    <h2>サマリー</h2>
+    <div class="sum">
+      <div class="sumb"><div class="n" id="sTotal">–</div><div class="l">申込数</div></div>
+      <div class="sumb"><div class="n" id="sMendan">–</div><div class="l">面談希望 数</div></div>
+      <div class="sumb"><div class="n" id="sToday">–</div><div class="l">本日の申込 数</div></div>
+    </div>
+    <div class="stitleWrap" style="margin-top:14px;">
+      <h2 style="font-size:13.5px;">主犯ステージの分布</h2>
+      <div class="dist" id="distTop"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>申込一覧</h2>
+    <div class="filters">
+      <label><input type="checkbox" id="fMendan"> 面談希望のみ</label>
+      <label>検索：<input type="text" id="fSearch" placeholder="お名前・会社名・メールで検索"></label>
+    </div>
+    <p class="muted">5つの信号の順：設計・配信・心理・面談・掘り起こし（青=順調／黄=要注意／桃=主犯）</p>
+    <div class="tbox"><table id="tbl">
+      <thead><tr>
+        <th>日時</th><th>お名前</th><th>会社名</th><th>メール</th><th>LINE・電話</th><th>単価帯</th>
+        <th>面談希望</th><th>主犯ステージ</th><th>現状→弊社</th><th>5つの信号</th><th>メモ</th><th></th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table></div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var SB_URL='https://inrvprlyobghviklulcv.supabase.co';
+var SB_KEY='sb_publishable_ZrCNcsRHMci-l7Fns8QtIA_X22XZGJp';
+var PASS='merone';
+var SIG_COLOR={'青':'#7fb0d2','黄':'#e6c35c','桃':'#cf8f9c'};
+var DIST_PALETTE=['#7fb0d2','#cf8f9c','#e6c35c','#26405f','#bd7886'];
+var DEBUG=/debug=1/.test(location.search);
+var rows=[];
+
+function $(id){ return document.getElementById(id); }
+function dbg(m){
+  if(!DEBUG) return;
+  var el=$('dbg'); el.style.display='block';
+  el.textContent+=m+'\n';
+}
+function sb(path,opt){
+  opt=opt||{};
+  opt.headers=Object.assign({apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},opt.headers||{});
+  return fetch(SB_URL+'/rest/v1/'+path,opt);
+}
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function orDash(v){ return (v===null||v===undefined||v==='')?'—':v; }
+function truncate(s,n){ s=String(s||''); return s.length>n?(s.slice(0,n)+'…'):s; }
+
+function fmtJST(iso){
+  if(!iso) return '—';
+  try{
+    var d=new Date(iso);
+    if(isNaN(d.getTime())) return '—';
+    var parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(d);
+    var o={}; parts.forEach(function(p){ o[p.type]=p.value; });
+    var hh=o.hour==='24'?'00':o.hour;
+    return o.year+'/'+o.month+'/'+o.day+' '+hh+':'+o.minute;
+  }catch(e){ return '—'; }
+}
+function jstDateKey(d){
+  try{ return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(d); }
+  catch(e){ return ''; }
+}
+function jstDateKeyFromIso(iso){
+  try{ return jstDateKey(new Date(iso)); }catch(e){ return ''; }
+}
+
+// ============ あいことば ============
+function unlock(){ $('gate').style.display='none'; $('main').style.display='block'; loadAll(); }
+$('pwBtn').onclick=function(){
+  if($('pw').value.trim().toLowerCase()===PASS){ try{sessionStorage.setItem('gift_admin','1');}catch(e){} unlock(); }
+  else{ $('pwNg').style.display='block'; }
+};
+$('pw').addEventListener('keydown',function(e){ if(e.key==='Enter')$('pwBtn').click(); });
+try{ if(sessionStorage.getItem('gift_admin')==='1') unlock(); }catch(e){}
+
+// ============ 行の変換 ============
+function parseRow(r){
+  var m={};
+  try{ m=JSON.parse(r.memo||'{}')||{}; }catch(e){ m={}; }
+  if(typeof m!=='object'||m===null) m={};
+  var diag=(m.diag&&typeof m.diag==='object')?m.diag:{};
+  var signals=(diag.signals&&typeof diag.signals==='object')?diag.signals:{};
+  var inputs=(diag.inputs&&typeof diag.inputs==='object')?diag.inputs:{};
+  return {
+    run_id:r.run_id, task_key:r.task_key,
+    name:m.name||r.owner_members||'',
+    company:m.company||'',
+    mail:m.mail||'',
+    line:m.line||'',
+    mendan:!!m.mendan,
+    price:m.price||'',
+    top:diag.top||'',
+    now:(typeof diag.now==='number')?diag.now:null,
+    ours:(typeof diag.ours==='number')?diag.ours:15,
+    signals:signals,
+    inputs:inputs,
+    note:m.note||'',
+    src:m.src||'',
+    at:m.at||r.updated_at||'',
+    ua:m.ua||''
+  };
+}
+
+// ============ 読み込み ============
+function loadAll(){
+  $('lastLoad').textContent='読み込み中…';
+  $('errLine').style.display='none';
+  sb('promo_tasks?run_id=eq.nurture-gift&owner_depts=eq.nurture-gift&order=updated_at.desc&limit=5000')
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(function(data){
+      var raw=Array.isArray(data)?data:[];
+      rows=raw.map(parseRow);
+      dbg('loaded '+rows.length+' rows');
+      render();
+      $('lastLoad').textContent='最終読込 '+fmtJST(new Date().toISOString())+'｜'+rows.length+'件';
+    })
+    .catch(function(e){
+      $('lastLoad').textContent='';
+      $('errLine').style.display='block';
+      $('errLine').textContent='読み込みに失敗しました：'+e.message;
+      dbg('load error: '+e.message);
+    });
+}
+$('btnReload').onclick=loadAll;
+$('fMendan').onchange=renderTable;
+$('fSearch').addEventListener('input',renderTable);
+
+// ============ 描画：サマリー ============
+function render(){
+  $('sTotal').textContent=rows.length;
+  $('sMendan').textContent=rows.filter(function(r){ return r.mendan; }).length;
+  var todayKey=jstDateKey(new Date());
+  $('sToday').textContent=rows.filter(function(r){ return jstDateKeyFromIso(r.at)===todayKey; }).length;
+
+  var dist={};
+  rows.forEach(function(r){ var k=r.top||'未判定'; dist[k]=(dist[k]||0)+1; });
+  var keys=Object.keys(dist).sort(function(a,b){ return dist[b]-dist[a]; });
+  var mx=keys.length?dist[keys[0]]:1;
+  $('distTop').innerHTML=keys.length?keys.map(function(k,i){
+    var c=DIST_PALETTE[i%DIST_PALETTE.length];
+    var pct=Math.max(Math.round(dist[k]/mx*100),4);
+    return '<div class="row"><span class="lbl" title="'+esc(k)+'">'+esc(k)+'</span>'+
+      '<span class="bg"><span class="bf" style="width:'+pct+'%;background:'+c+'"></span></span>'+
+      '<span class="ct">'+dist[k]+'件</span></div>';
+  }).join(''):'<p class="muted">まだ申込はありません</p>';
+
+  renderTable();
+}
+
+// ============ 描画：一覧 ============
+function getFiltered(){
+  var q=($('fSearch').value||'').trim().toLowerCase();
+  var onlyMendan=$('fMendan').checked;
+  return rows.filter(function(r){
+    if(onlyMendan && !r.mendan) return false;
+    if(q){
+      var hay=(r.name+' '+r.company+' '+r.mail).toLowerCase();
+      if(hay.indexOf(q)<0) return false;
+    }
+    return true;
+  });
+}
+
+function sigDot(label,val){
+  var c=SIG_COLOR[val]||'#d9e4ef';
+  return '<span class="dot" style="background:'+c+'" title="'+label+'：'+(val?esc(val):'未回答')+'"></span>';
+}
+
+function inputsHtml(inputs){
+  var keys=Object.keys(inputs||{});
+  if(!keys.length) return '<p class="muted">入力データはありません</p>';
+  return '<div class="inputsList">'+keys.map(function(k){
+    var v=inputs[k];
+    if(v&&typeof v==='object'){ try{ v=JSON.stringify(v); }catch(e){ v=String(v); } }
+    return '<div class="irow"><span class="ik">'+esc(k)+'</span><span class="iv">'+esc(v==null?'':String(v))+'</span></div>';
+  }).join('')+'</div>';
+}
+
+function renderTable(){
+  var list=getFiltered();
+  if(!list.length){
+    $('tbody').innerHTML='<tr><td colspan="12" class="muted">まだ申込はありません</td></tr>';
+    return;
+  }
+  $('tbody').innerHTML=list.map(function(r,i){
+    var mailCell=r.mail?('<a href="mailto:'+esc(r.mail)+'">'+esc(r.mail)+'</a>'):'—';
+    var mendanCell=r.mendan?'<span class="badge">希望</span>':'—';
+    var copyBtn=r.mendan?('<br><button class="btn line copyMail" data-i="'+i+'" style="margin-top:6px;padding:4px 10px;font-size:11px;">メール文面をコピー</button>'):'';
+    var nowTxt=(r.now==null)?'—':(r.now+'件');
+    var dots=sigDot('設計',r.signals.sekkei)+sigDot('配信',r.signals.haishin)+sigDot('心理',r.signals.shinri)+sigDot('面談',r.signals.mendan)+sigDot('掘り起こし',r.signals.horiokoshi);
+    var noteShort=r.note?esc(truncate(r.note,22)):'—';
+    return '<tr>'+
+      '<td>'+esc(fmtJST(r.at))+'</td>'+
+      '<td><b>'+esc(orDash(r.name))+'</b></td>'+
+      '<td>'+esc(orDash(r.company))+'</td>'+
+      '<td>'+mailCell+'</td>'+
+      '<td>'+esc(orDash(r.line))+'</td>'+
+      '<td>'+esc(orDash(r.price))+'</td>'+
+      '<td>'+mendanCell+copyBtn+'</td>'+
+      '<td>'+esc(orDash(r.top))+'</td>'+
+      '<td>'+nowTxt+' → '+r.ours+'件</td>'+
+      '<td class="dots">'+dots+'</td>'+
+      '<td title="'+esc(r.note||'')+'">'+noteShort+'</td>'+
+      '<td><button class="btn line detailBtn" data-i="'+i+'">詳細</button> <span class="del" data-i="'+i+'">✕</span></td>'+
+    '</tr>'+
+    '<tr class="detailRow" data-row="'+i+'" style="display:none;"><td colspan="12">'+inputsHtml(r.inputs)+'</td></tr>';
+  }).join('');
+
+  Array.prototype.forEach.call(document.querySelectorAll('.detailBtn'),function(el){
+    el.onclick=function(){
+      var i=el.getAttribute('data-i');
+      var tr=document.querySelector('.detailRow[data-row="'+i+'"]');
+      if(!tr) return;
+      var open=tr.style.display!=='none';
+      tr.style.display=open?'none':'table-row';
+      el.textContent=open?'詳細':'閉じる';
+    };
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.del'),function(el){
+    el.onclick=function(){
+      var r=list[Number(el.getAttribute('data-i'))];
+      if(!r) return;
+      if(!confirm((r.name||'このお申込み')+' さんの申込みを削除します。よろしいですか？')) return;
+      sb('promo_tasks?run_id=eq.'+encodeURIComponent(r.run_id)+'&task_key=eq.'+encodeURIComponent(r.task_key),{method:'DELETE'})
+        .then(function(){ loadAll(); })
+        .catch(function(){ alert('削除に失敗しました'); });
+    };
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.copyMail'),function(el){
+    el.onclick=function(){
+      var r=list[Number(el.getAttribute('data-i'))];
+      if(!r) return;
+      var text=buildMailDraft(r);
+      copyToClipboard(text).then(function(){
+        var orig=el.textContent;
+        el.textContent='コピーしました';
+        el.classList.add('copySuccess');
+        setTimeout(function(){ el.textContent=orig; el.classList.remove('copySuccess'); },1800);
+      }).catch(function(){ alert('コピーに失敗しました。お手数ですが手動でご利用ください。\n\n'+text); });
+    };
+  });
+}
+
+// ============ メール文面 ============
+function buildMailDraft(r){
+  var sama=(r.company?r.company+' ':'')+(r.name||'ご担当者')+'様';
+  var subject='【株式会社Merone】ファネル診断面談のご案内';
+  var body=
+sama+'\n\n'+
+'お世話になっております。株式会社Meroneの森川公美子です。\n\n'+
+'先日は千葉テレビ主催の勉強会にご参加いただき、誠にありがとうございました。\n\n'+
+'ご登録いただきましたファネル診断の結果をもとに、30分ほどの面談にて詳しくお話しできればと考えております。\n'+
+'近日中に面談の候補日を1〜2件ほどお送りいたしますので、ご都合のよい日程をお知らせいただけますと幸いです。\n\n'+
+'ご多用のところ恐れ入りますが、ご検討のほどよろしくお願いいたします。\n\n'+
+'株式会社Merone\n'+
+'森川公美子';
+  return '件名：'+subject+'\n\n'+body;
+}
+function copyToClipboard(text){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    return navigator.clipboard.writeText(text);
+  }
+  return new Promise(function(resolve,reject){
+    try{
+      var ta=document.createElement('textarea');
+      ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      var ok=document.execCommand('copy');
+      document.body.removeChild(ta);
+      ok?resolve():reject(new Error('execCommand failed'));
+    }catch(e){ reject(e); }
+  });
+}
+
+// ============ CSV ============
+$('btnCsv').onclick=function(){
+  var head=['日時','お名前','会社名','メール','LINE・電話','単価帯','面談希望','主犯ステージ',
+    '現状件数(100名あたり)','弊社想定件数(100名あたり)','信号_設計','信号_配信','信号_心理','信号_面談','信号_掘り起こし',
+    'メモ','流入元','生入力データ(JSON)'];
+  var lines=[head.join(',')].concat(rows.map(function(r){
+    return [
+      fmtJST(r.at), r.name, r.company, r.mail, r.line, r.price, (r.mendan?'希望':''), r.top,
+      (r.now==null?'':r.now), r.ours,
+      r.signals.sekkei||'', r.signals.haishin||'', r.signals.shinri||'', r.signals.mendan||'', r.signals.horiokoshi||'',
+      r.note, r.src, JSON.stringify(r.inputs||{})
+    ].map(function(v){
+      v=String(v==null?'':v);
+      return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;
+    }).join(',');
+  }));
+  var blob=new Blob(['﻿'+lines.join('\n')],{type:'text/csv'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='merone_gift_moshikomi.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+};
+
+// ============ 動作チェック（書込→読込→削除） ============
+$('btnHealth').onclick=function(){
+  var log=$('hlog'); log.style.display='block'; log.textContent='動作チェックを開始します…\n';
+  function put(m){ log.textContent+=m+'\n'; }
+  var key='hc_'+Date.now();
+  var row={run_id:'nurture-gift-selftest',task_key:key,done:true,owner_depts:'nurture-gift',owner_members:'selftest',
+    memo:JSON.stringify({v:1,name:'selftest',hc:true}),updated_at:new Date().toISOString()};
+  sb('promo_tasks',{method:'POST',body:JSON.stringify(row),headers:{Prefer:'resolution=merge-duplicates'}})
+    .then(function(r){ if(!r.ok) throw new Error('書込 HTTP '+r.status); put('1) 書込 … OK');
+      return sb('promo_tasks?run_id=eq.nurture-gift-selftest&task_key=eq.'+key); })
+    .then(function(r){ return r.json(); })
+    .then(function(d){ if(!d||!d.length) throw new Error('読込：書いた行が見つかりません'); put('2) 読込 … OK');
+      return sb('promo_tasks?run_id=eq.nurture-gift-selftest&task_key=eq.'+key,{method:'DELETE'}); })
+    .then(function(r){ if(!r.ok) throw new Error('削除 HTTP '+r.status); put('3) 削除 … OK\nすべて正常です'); })
+    .catch(function(e){ put('エラー：'+e.message+'\n→ このメッセージのスクショを添えて開発側へ連絡してください'); });
+};
+})();
+</script>
+</body>
+</html>
