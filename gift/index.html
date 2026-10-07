@@ -1,395 +1,208 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light only">
-<meta name="robots" content="noindex,nofollow">
-<title>3分ファネル診断｜株式会社Merone</title>
-<meta name="description" content="勉強会の続きとして。自社のファネルのどこが詰まっているかを3分で見える化する診断、配信文の圧チェッカー、ナーチャリング無料コンサル30分【限定3社】をご用意しました。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<style>
-:root{
-  color-scheme:light;
-  --bg:#eef4fa;--bg2:#f5f9fd;--panel:#fff;
-  --ink:#3f3a3c;--ink-soft:#6a6469;
-  --navy:#26405f;--navy-deep:#1d3149;
-  --pink:#cf8f9c;--pink-deep:#bd7886;--pink-soft:#fbeef1;
-  --blue:#7fb0d2;--blue-soft:#e3ecf6;--yellow:#e6c35c;--yellow-soft:#fbf4dc;
-  --line:#d9e4ef;--line-soft:#e8eef5;
-  --shadow:0 18px 50px -28px rgba(38,64,95,.35);--shadow-sm:0 8px 24px -16px rgba(38,64,95,.4);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:radial-gradient(900px 500px at 85% -5%,var(--pink-soft) 0%,rgba(0,0,0,0) 55%),radial-gradient(900px 480px at 5% 0%,var(--blue-soft) 0%,rgba(0,0,0,0) 52%),var(--bg);color:var(--ink);font-family:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased;letter-spacing:.012em;overflow-x:hidden}
-img{max-width:100%;display:block}
-button,input,select,textarea{font:inherit;color:inherit}
-.serif{font-family:"Cormorant Garamond","Times New Roman",serif;font-style:italic;letter-spacing:.04em}
-h1,h2,h3{word-break:auto-phrase;overflow-wrap:anywhere;text-wrap:balance}
-.mob{display:none}@media(max-width:560px){.mob{display:inline}}
-
-header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.2) blur(10px);background:color-mix(in srgb,var(--bg) 84%,transparent);border-bottom:1px solid var(--line-soft)}
-header.site .row{max-width:640px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-header.site img{height:24px;width:auto}
-header.site .tag{font-size:11.5px;color:var(--ink-soft);letter-spacing:.12em;font-weight:700}
-
-.wrap{max-width:640px;margin:0 auto;padding:0 18px}
-section{padding:40px 0}
-.eyebrow{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:var(--pink-deep);letter-spacing:.06em;font-weight:600;margin-bottom:6px}
-.sec-title{font-size:clamp(21px,5.6vw,27px);font-weight:800;color:var(--navy);line-height:1.45;margin-bottom:12px}
-.lead{font-size:15px;color:var(--ink-soft);line-height:2}
-
-/* hero */
-.hero{padding:40px 0 26px}
-.hero .greet{display:flex;gap:14px;align-items:flex-start}
-.hero .avatar{flex:none;width:64px;height:64px;border-radius:50%;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow-sm);overflow:hidden}
-.hero .avatar img{width:100%;height:100%;object-fit:cover}
-.hero .bubble{background:var(--panel);border:1px solid var(--line);border-radius:18px;border-top-left-radius:6px;padding:16px 18px;box-shadow:var(--shadow-sm);font-size:15px;line-height:1.95}
-.hero .bubble b{color:var(--navy);font-weight:800}
-.hero h1{font-size:clamp(25px,7vw,34px);font-weight:900;color:var(--navy-deep);line-height:1.35;margin:26px 0 12px}
-.hero h1 .hl{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--pink) 42%,transparent) 62%);padding:0 2px}
-.hero p.sub{font-size:15.5px;color:var(--ink);line-height:2}
-
-.gifts{display:flex;flex-direction:column;gap:12px;margin-top:22px}
-.gift{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start}
-.gift .no{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:var(--pink-deep);font-weight:600;line-height:1;padding-top:4px}
-.gift .no small{display:block;font-family:"Yu Gothic","YuGothic","Hiragino Sans",sans-serif;font-style:normal;font-size:10px;letter-spacing:.14em;color:var(--blue);font-weight:800;margin-bottom:2px}
-.gift h3{font-size:16.5px;color:var(--navy);font-weight:800;line-height:1.5}
-.gift p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin-top:4px}
-.gift .pill{display:inline-block;margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.06em;padding:2px 10px;border-radius:999px;background:var(--blue-soft);color:var(--navy)}
-.gift .pill.pk{background:var(--pink-soft);color:var(--pink-deep)}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;white-space:nowrap;border-radius:999px;padding:15px 26px;font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;transition:transform .12s ease,box-shadow .12s ease}
-.btn:active{transform:translateY(1px)}
-.btn.primary{background:linear-gradient(135deg,var(--pink) 0%,var(--pink-deep) 100%);color:#fff;box-shadow:0 14px 30px -14px rgba(189,120,134,.7);width:100%}
-.btn.ghost{background:var(--panel);border:1.5px solid var(--line);color:var(--navy);width:100%}
-.btn.sm{padding:10px 16px;font-size:13.5px;width:auto}
-.btn[disabled]{opacity:.5;cursor:default}
-.ctaline{margin-top:22px;display:flex;flex-direction:column;gap:10px}
-.note{font-size:12.5px;color:var(--ink-soft);line-height:1.8}
-
-/* diagnosis */
-.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px 20px;box-shadow:var(--shadow)}
-.progress{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.progress .bar{flex:1;height:8px;border-radius:999px;background:var(--line-soft);overflow:hidden}
-.progress .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--pink));border-radius:999px;transition:width .3s ease}
-.progress .n{font-size:12.5px;font-weight:800;color:var(--ink-soft);font-variant-numeric:tabular-nums;white-space:nowrap}
-.q{display:none}.q.on{display:block;animation:fade .25s ease}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.q .stage{font-size:11.5px;font-weight:800;letter-spacing:.12em;color:var(--blue);margin-bottom:6px}
-.q h3{font-size:19px;color:var(--navy);font-weight:800;line-height:1.55;margin-bottom:6px}
-.q .why{font-size:13px;color:var(--ink-soft);line-height:1.8;margin-bottom:14px}
-.opts{display:flex;flex-direction:column;gap:9px}
-.opt{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1.5px solid var(--line);border-radius:14px;padding:13px 14px;cursor:pointer;text-align:left;font-size:15px;line-height:1.6;transition:border-color .12s,background .12s}
-.opt:hover{border-color:var(--blue)}
-.opt.sel{border-color:var(--pink-deep);background:var(--pink-soft)}
-.opt .k{flex:none;width:26px;height:26px;border-radius:50%;background:var(--panel);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--navy)}
-.opt.sel .k{background:var(--pink-deep);border-color:var(--pink-deep);color:#fff}
-.numrow{display:flex;gap:10px;align-items:center;margin-bottom:10px}
-.numrow input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;font-size:20px;font-weight:800;color:var(--navy);background:var(--bg2);font-variant-numeric:tabular-nums}
-.numrow input:focus{outline:none;border-color:var(--blue)}
-.numrow .unit{font-size:14px;color:var(--ink-soft);font-weight:700;white-space:nowrap}
-.nav{display:flex;gap:10px;margin-top:18px}
-.nav .btn{flex:1}
-.nav .btn.ghost{flex:.6}
-@media(max-width:560px){#checker .nav{flex-direction:column}#checker .nav .btn{flex:none;width:100%}}
-
-/* result */
-.res{display:none}.res.on{display:block;animation:fade .3s ease}
-.hundred{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px 20px;box-shadow:var(--shadow)}
-.hundred h3{font-size:18px;color:var(--navy);font-weight:800;margin-bottom:4px}
-.hundred .cap{font-size:12.5px;color:var(--ink-soft);margin-bottom:14px;line-height:1.7}
-.bars{display:flex;flex-direction:column;gap:12px}
-.brow{display:grid;grid-template-columns:86px 1fr 70px;gap:10px;align-items:center}
-.brow .l{font-size:12.5px;font-weight:800;color:var(--ink-soft);line-height:1.4}
-.brow .track{height:22px;border-radius:999px;background:var(--line-soft);overflow:hidden}
-.brow .track i{display:block;height:100%;border-radius:999px;width:0;transition:width .7s ease}
-.brow.now .track i{background:var(--blue)}
-.brow.ours .track i{background:linear-gradient(90deg,var(--pink),var(--pink-deep))}
-.brow .v{font-size:19px;font-weight:900;color:var(--navy);font-variant-numeric:tabular-nums;text-align:right;line-height:1.1}
-.brow .v small{display:block;font-size:10.5px;color:var(--ink-soft);font-weight:700}
-.brow.ours .v{color:var(--pink-deep)}
-.gap{margin-top:14px;padding:12px 14px;border-radius:14px;background:var(--pink-soft);font-size:14px;line-height:1.8;color:var(--ink)}
-.gap b{color:var(--pink-deep);font-weight:900;font-size:17px}
-
-.signals{margin-top:16px;display:flex;flex-direction:column;gap:8px}
-.sig{display:grid;grid-template-columns:16px 92px 1fr;gap:10px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:11px 13px}
-.sig .dot{width:14px;height:14px;border-radius:50%;margin-top:6px;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
-.sig .dot.b{background:var(--blue)}.sig .dot.y{background:var(--yellow)}.sig .dot.p{background:var(--pink-deep)}
-.sig .nm{font-size:13.5px;font-weight:800;color:var(--navy);line-height:1.5}
-.sig .nm small{display:block;font-size:10.5px;color:var(--ink-soft);font-weight:700;letter-spacing:.05em}
-.sig .tx{font-size:13px;color:var(--ink-soft);line-height:1.75}
-.sig.top{border-color:var(--pink);background:color-mix(in srgb,var(--pink-soft) 60%,#fff)}
-.legend{margin-top:8px;font-size:11.5px;color:var(--ink-soft);display:flex;gap:12px;flex-wrap:wrap}
-.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:middle}
-
-.culprit{margin-top:18px;background:var(--panel);border:1px solid color-mix(in srgb,var(--pink) 45%,var(--line));border-left:5px solid var(--pink);border-radius:20px;padding:22px 20px;box-shadow:var(--shadow)}
-.culprit .cat{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:var(--pink-deep);font-weight:600;letter-spacing:.08em}
-.culprit h3{font-size:20px;color:var(--navy);font-weight:900;line-height:1.5;margin:2px 0 10px}
-.culprit p{font-size:14.5px;color:var(--ink);line-height:1.95}
-.culprit .blk{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
-.culprit .blk .k{font-size:11.5px;font-weight:800;letter-spacing:.12em;color:var(--blue);margin-bottom:4px}
-.culprit .blk .v{font-size:15px;font-weight:800;color:var(--navy);line-height:1.7}
-.culprit .blk .m{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin-top:4px}
-.culprit .blk .m b{color:var(--pink-deep);font-weight:800;font-variant-numeric:tabular-nums}
-
-/* checker */
-textarea{width:100%;min-height:170px;border:1.5px solid var(--line);border-radius:16px;padding:14px;background:var(--bg2);font-size:15px;line-height:1.8;resize:vertical}
-textarea:focus{outline:none;border-color:var(--blue)}
-.chk{margin-top:16px;display:none;flex-direction:column;gap:8px}
-.chk.on{display:flex}
-.ck{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:11px 13px}
-.ck .ic{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#fff;margin-top:2px}
-.ck.ok .ic{background:var(--blue)}.ck.ng .ic{background:var(--pink-deep)}.ck.info .ic{background:var(--yellow)}
-.ck .t{font-size:14px;font-weight:800;color:var(--navy);line-height:1.5}
-.ck .d{font-size:13px;color:var(--ink-soft);line-height:1.75}
-.ck .d b{color:var(--pink-deep);font-weight:800}
-.score{display:flex;align-items:baseline;gap:8px;margin-top:4px}
-.score .n{font-size:34px;font-weight:900;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap;flex:none}
-.score .l{font-size:13px;color:var(--ink-soft);font-weight:700}
-.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow-sm);margin-top:14px}
-table.tr{border-collapse:collapse;width:100%;min-width:0;font-size:13.5px}
-@media(max-width:560px){table.tr{font-size:12.5px}table.tr th,table.tr td{padding:9px 8px}}
-table.tr th{background:var(--bg2);color:var(--ink-soft);font-size:12px;letter-spacing:.06em;text-align:left;padding:12px 14px;font-weight:800;border-bottom:1px solid var(--line)}
-table.tr th.us{color:var(--pink-deep)}
-table.tr td{padding:12px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.7}
-table.tr tr:last-child td{border-bottom:0}
-table.tr td.them{color:var(--ink-soft);width:42%}
-table.tr td.us{background:color-mix(in srgb,var(--pink-soft) 55%,transparent);font-weight:600;color:var(--ink)}
-
-/* pamphlet block */
-.pamph{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:center;background:var(--panel);border:1.5px solid color-mix(in srgb,var(--pink) 45%,var(--line));border-radius:20px;padding:16px 16px;box-shadow:var(--shadow);text-decoration:none;color:inherit;margin-top:18px}
-.pamph img{width:104px;height:auto;border-radius:10px;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
-.pamph .e{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:14px;color:var(--pink-deep);font-weight:600;letter-spacing:.06em}
-.pamph .t{font-size:16px;font-weight:900;color:var(--navy);line-height:1.5;margin-top:2px;word-break:auto-phrase;overflow-wrap:anywhere}
-.pamph .d{font-size:12.5px;color:var(--ink-soft);line-height:1.75;margin-top:4px;word-break:auto-phrase;overflow-wrap:anywhere}
-.pamph .go{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--pink),var(--pink-deep));padding:6px 14px;border-radius:999px}
-@media(max-width:420px){.pamph{grid-template-columns:84px 1fr;gap:12px;padding:14px}.pamph img{width:84px}}
-/* form */
-.form{display:flex;flex-direction:column;gap:12px}
-.fld label{display:block;font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:5px;letter-spacing:.04em}
-.fld label small{font-weight:700;color:var(--ink-soft);margin-left:6px}
-.fld input,.fld select{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--bg2);font-size:16px}
-.fld input:focus,.fld select:focus{outline:none;border-color:var(--blue)}
-.chkbox{display:flex;gap:12px;align-items:flex-start;background:var(--pink-soft);border:1.5px solid color-mix(in srgb,var(--pink) 40%,var(--line));border-radius:16px;padding:14px;cursor:pointer}
-.chkbox input{width:22px;height:22px;margin-top:3px;accent-color:var(--pink-deep);flex:none}
-.chkbox .t{font-size:15px;font-weight:800;color:var(--navy);line-height:1.6}
-.chkbox .d{font-size:12.5px;color:var(--ink-soft);line-height:1.75;margin-top:2px}
-.st{font-size:13px;color:var(--ink-soft);min-height:1.5em;line-height:1.7}
-.st.ng{color:var(--pink-deep);font-weight:700}
-
-/* thanks */
-.thanks{display:none}.thanks.on{display:block;animation:fade .3s ease}
-.tpl{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px 16px 14px;box-shadow:var(--shadow-sm);margin-top:12px}
-.tpl .h{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
-.tpl .h .btn{flex:none}
-.tpl .h b{font-size:14.5px;color:var(--navy);font-weight:800;line-height:1.5;word-break:auto-phrase;overflow-wrap:anywhere}
-.tpl pre{white-space:pre-wrap;word-break:break-word;font-family:inherit;font-size:14px;line-height:1.85;background:var(--bg2);border:1px solid var(--line-soft);border-radius:12px;padding:12px 13px;color:var(--ink)}
-.tpl .m{font-size:12.5px;color:var(--ink-soft);line-height:1.75;margin-top:8px}
-.tpl .m b{color:var(--pink-deep);font-weight:800}
-.dl{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-.dl a{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--panel);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;text-decoration:none;color:var(--navy);font-weight:800;font-size:15px;box-shadow:var(--shadow-sm)}
-.dl a span{font-size:12px;color:var(--ink-soft);font-weight:700;white-space:nowrap}
-
-footer{padding:36px 18px 56px;text-align:center;color:var(--ink-soft);font-size:12px;line-height:1.9}
-footer .note{max-width:560px;margin:0 auto 12px;font-size:11.5px}
-footer a{color:var(--navy);font-weight:700}
-.hidden{display:none !important}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light only">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#eef4fa">
+  <title>3分ファネル診断｜株式会社Merone</title>
+  <meta name="description" content="勉強会のつづきに、3つの贈り物。ファネル診断、配信文の圧チェッカー、30分の無料コンサルで、次に取り組むことを整理します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-
+<a class="skip-link" href="#diag">診断へスキップ</a>
 <header class="site">
-  <div class="row">
-    <img src="../merone-logo.png" alt="Merone">
-    <div class="tag">勉強会のつづき</div>
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Merone ページの先頭へ"><img src="../merone-logo.png" alt="Merone" width="151" height="32"></a>
+    <span class="header-tag">勉強会のつづき</span>
+    <nav class="site-nav" aria-label="特典メニュー">
+      <a href="#diag"><span>01</span> ファネル診断</a>
+      <a href="#checker"><span>02</span> 配信文チェック</a>
+      <a href="#gift3" class="nav-consult"><span>03</span> 個別相談 <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
 </header>
-
-<!-- ============ HERO ============ -->
-<div class="wrap">
-  <section class="hero" id="top">
-    <div class="greet">
-      <div class="avatar"><img src="img/char-head.png" alt=""></div>
-      <div class="bubble">本日はご参加ありがとうございました。<br>「今夜、1通だけ直してみよう」の<b>その1通</b>のために、3つご用意しました。<br><span class="serif" style="color:var(--pink-deep);font-size:15px">— 森川公美子</span></div>
-    </div>
-    <h1>同じ100名から、<br class="mob">あと何件 <span class="hl">決まるか</span>。</h1>
-    <p class="sub">広告費を増やさずに成約を増やす鍵は、登録してから面談までの「体験」にあります。まずは、御社の数字でご覧いただけます。</p>
-
-    <div class="gifts">
-      <div class="gift">
-        <div class="no"><small>GIFT</small>01</div>
-        <div>
-          <h3>3分ファネル診断</h3>
-          <p>5つの段階のどこが詰まっているか、手元の数字で見える化します。数字が手元になくても、そのまま進めます。</p>
-          <span class="pill">登録不要・その場で結果</span>
-        </div>
+<main id="main">
+  <section class="hero section-shell" id="top" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">A little gift, for your next step.</p>
+      <h1 id="hero-title"><span>同じ100名から、</span><span>あと何件<span class="highlight">決まるか。</span></span></h1>
+      <p class="hero-lead">広告費を増やさずに成約を増やす鍵は、<br class="desktop-br">登録してから面談までの「体験」にあります。<br class="desktop-br">まずは、<span class="phrase">御社の数字で</span><span class="phrase">ご覧いただけます。</span></p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#diag">3分診断をはじめる <span aria-hidden="true">→</span></a>
+        <p class="micro-meta"><span>全9問</span><span>登録不要</span><span>その場で結果</span></p>
       </div>
-      <div class="gift">
-        <div class="no"><small>GIFT</small>02</div>
-        <div>
-          <h3>配信文の圧チェッカー＋翻訳表</h3>
-          <p>今夜直す1通を貼るだけ。8項目で「圧」を見抜き、要求を贈り物に翻訳する表つき。</p>
-          <span class="pill">登録不要</span>
-        </div>
-      </div>
-      <div class="gift">
-        <div class="no"><small>GIFT</small>03</div>
-        <div>
-          <h3>ナーチャリング無料コンサル30分【限定3社】</h3>
-          <p>診断の結果を一緒に見ながら、直す順番を決める30分（オンライン）。売り込みはしません。</p>
-          <span class="pill pk">限定3社</span>
-        </div>
+      <div class="personal-note">
+        <img src="img/char-head.png" alt="" width="60" height="60">
+        <div><p>本日はご参加ありがとうございました。<br>「今夜、1通だけ直してみよう」の<br class="wide-br"><strong>その1通</strong>のために、3つご用意しました。</p><span class="signature">株式会社Merone　森川公美子</span></div>
       </div>
     </div>
-
-    <div class="ctaline">
-      <a class="btn primary" href="#diag">3分診断をはじめる</a>
-      <a class="btn ghost" href="#checker">先に配信文をチェックする</a>
+    <div class="gift-menu" aria-label="3つの贈り物">
+      <div class="menu-caption"><span class="eyebrow">Three gifts for you</span><span class="fine-line"></span></div>
+      <a class="gift" href="#diag">
+        <span class="gift-number">01</span>
+        <div><span class="gift-kicker">数字から、次の一手を。</span><h2>3分ファネル診断</h2><p>5つの視点で、見直すポイントを整理。<br>数字が手元になくても進められます。</p><span class="pill">登録不要・全9問</span></div>
+        <span class="gift-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="gift" href="#checker">
+        <span class="gift-number">02</span>
+        <div><span class="gift-kicker">その1通を、やさしく。</span><h2>配信文の圧チェッカー<span class="gift-subtitle">＋ 要求を贈り物に変える翻訳表</span></h2><p>LINEやメールの文章を、8項目で確認。</p><span class="pill">登録不要</span></div>
+        <span class="gift-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="gift" href="#gift3">
+        <span class="gift-number">03</span>
+        <div><span class="gift-kicker">一緒に、順番を決める。</span><h2>ナーチャリング無料コンサル</h2><p>診断結果をもとに、次に取り組むことを。</p><span class="pill pink">30分・オンライン</span><span class="availability">受付枠：3社</span></div>
+        <span class="gift-arrow" aria-hidden="true">↗</span>
+      </a>
     </div>
-    <p class="note" style="margin-top:12px">診断は9問です。数字が手元にない場合は「把握していない」をお選びください。そこから見えることもあります。</p>
   </section>
-</div>
 
-<!-- ============ DIAGNOSIS ============ -->
-<div class="wrap">
-  <section id="diag">
-    <div class="eyebrow">Gift 01</div>
-    <h2 class="sec-title">3分ファネル診断</h2>
-    <p class="lead">広告→LINE登録→教育→面談→成約。この流れの、どこで水が漏れているか。弊社が支援先で最初に確認する順番で、お伺いしていきます。</p>
-
-    <div class="card" style="margin-top:18px" id="quiz">
-      <div class="progress"><div class="bar"><i id="pbar"></i></div><div class="n" id="pnum">1 / 9</div></div>
-
-      <!-- Q1 -->
+  <section class="feature-section" id="diag" aria-labelledby="diag-title">
+    <div class="section-shell feature-grid">
+      <div class="section-intro">
+        <div class="section-index"><span class="eyebrow">Gift</span><span>01</span></div>
+        <p class="section-kicker">数字を知ることから、はじめる。</p>
+        <h2 id="diag-title" class="sec-title"><span>3分</span><span>ファネル診断</span></h2>
+        <p class="lead">登録から成約までの流れを、5つの視点で確認します。どこから見直すか、御社の数字で整理してみましょう。</p>
+        <div class="funnel-path" aria-label="広告、LINE登録、教育、面談、成約"><span>広告</span><i aria-hidden="true">›</i><span>LINE登録</span><i aria-hidden="true">›</i><span>教育</span><i aria-hidden="true">›</i><span>面談</span><i aria-hidden="true">›</i><span>成約</span></div>
+        <div class="intro-tip"><span class="tip-mark" aria-hidden="true">i</span><p>数字はおおよそで大丈夫です。<br>不明な項目は「把握していない」を<br class="wide-br">選んで進められます。</p></div>
+        <p class="section-meta">約3分 <span>／</span> 全9問 <span>／</span> 登録不要</p>
+      </div>
+      <div class="section-content">
+        <div class="card quiz-card" id="quiz">
+          <div class="quiz-top"><span class="eyebrow">Your funnel, in focus.</span><span class="quiz-count"><strong id="q-current">01</strong><span>/ 09</span></span></div>
+          <div class="progress"><div class="bar" role="progressbar" aria-label="診断の進み具合" aria-valuemin="0" aria-valuemax="9" aria-valuenow="1"><i id="pbar"></i></div><span class="sr-only" id="pnum" aria-live="polite">1 / 9</span></div>
+          <div class="question-area">
       <div class="q on" data-q="price">
         <div class="stage">設計</div>
-        <h3>主力商材の単価は、どのあたりですか。</h3>
+        <h3 tabindex="-1"><span class="phrase">主力商材の単価は、</span><span class="phrase">どのあたりですか。</span></h3>
         <div class="why">単価によって「同じ100名」の価値が変わります。試算に使います。</div>
         <div class="opts">
-          <button class="opt" data-v="〜5万円"><span class="k">A</span>〜5万円</button>
-          <button class="opt" data-v="5〜20万円"><span class="k">B</span>5〜20万円</button>
-          <button class="opt" data-v="20〜50万円"><span class="k">C</span>20〜50万円</button>
-          <button class="opt" data-v="50万円〜"><span class="k">D</span>50万円〜</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="5万円未満"><span class="k">A</span>5万円未満</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="5万〜20万円未満"><span class="k">B</span>5万〜20万円未満</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="20万〜50万円未満"><span class="k">C</span>20万〜50万円未満</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="50万円〜"><span class="k">D</span>50万円〜</button>
         </div>
       </div>
 
       <!-- Q2 -->
       <div class="q" data-q="leads">
         <div class="stage">設計</div>
-        <h3>ひと月に、新しく入ってくる見込み客は何名ですか。</h3>
+        <h3 tabindex="-1"><span class="phrase">ひと月に、</span><span class="phrase">新しく入ってくる</span><span class="phrase">見込み客は何名ですか。</span></h3>
         <div class="why">LINE登録・資料請求・問い合わせなど、名前が分かった人の数です。おおよそで構いません。</div>
-        <div class="numrow"><input type="number" inputmode="numeric" min="0" placeholder="例：120" id="in_leads"><span class="unit">名／月</span></div>
+        <div class="numrow"><input type="number" inputmode="numeric" min="0" max="10000000" step="1" placeholder="例：120" id="in_leads" aria-label="ひと月の見込み客数" aria-describedby="quiz-error"><span class="unit">名／月</span></div>
         <div class="opts">
-          <button class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
         </div>
       </div>
 
       <!-- Q3 -->
       <div class="q" data-q="meet">
         <div class="stage">設計</div>
-        <h3>そのうち、面談・商談まで進むのは何名ですか。</h3>
-        <div class="why">ここが「面談創出率」。多くの会社で、登録と面談のあいだが誰の仕事でもなくなっています。</div>
-        <div class="numrow"><input type="number" inputmode="numeric" min="0" placeholder="例：12" id="in_meet"><span class="unit">名／月</span></div>
+        <h3 tabindex="-1"><span class="phrase">そのうち、</span><span class="phrase">面談・商談まで進むのは</span><span class="phrase">何名ですか。</span></h3>
+        <div class="why">前の質問で数えた見込み客のうち、面談・商談に進んだ人数です。同じ期間・同じ対象でお答えください。</div>
+        <div class="numrow"><input type="number" inputmode="numeric" min="0" max="10000000" step="1" placeholder="例：12" id="in_meet" aria-label="面談・商談に進んだ人数" aria-describedby="quiz-error"><span class="unit">名／月</span></div>
         <div class="opts">
-          <button class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
         </div>
       </div>
 
       <!-- Q4 -->
       <div class="q" data-q="close">
         <div class="stage">面談</div>
-        <h3>面談のうち、成約は何件ですか。</h3>
-        <div class="why">決着ベース（成約と失注が決まったもの）でお願いします。口頭の合意は含めずにお考えください。</div>
-        <div class="numrow"><input type="number" inputmode="numeric" min="0" placeholder="例：4" id="in_close"><span class="unit">件／月</span></div>
+        <h3 tabindex="-1"><span class="phrase">面談のうち、</span><span class="phrase">成約は何件ですか。</span></h3>
+        <div class="why">前の質問で数えた面談のうち、成約が確定した件数です。口頭の合意は含めず、同じ期間・同じ対象でお答えください。</div>
+        <div class="numrow"><input type="number" inputmode="numeric" min="0" max="10000000" step="1" placeholder="例：4" id="in_close" aria-label="成約件数" aria-describedby="quiz-error"><span class="unit">件／月</span></div>
         <div class="opts">
-          <button class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
         </div>
       </div>
 
       <!-- Q5 -->
       <div class="q" data-q="lt">
         <div class="stage">面談</div>
-        <h3>予約から面談当日まで、平均で何日あいていますか。</h3>
+        <h3 tabindex="-1"><span class="phrase">予約から面談当日まで、</span><span class="phrase">平均で何日あいていますか。</span></h3>
         <div class="why">弊社の実測では、「来たい気持ち」は1週間もちませんでした。枠の見せ方だけで実施率が動きます。</div>
         <div class="opts">
-          <button class="opt" data-v="3"><span class="k">A</span>3日以内</button>
-          <button class="opt" data-v="7"><span class="k">B</span>4〜7日</button>
-          <button class="opt" data-v="8"><span class="k">C</span>8日以上</button>
-          <button class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="3"><span class="k">A</span>3日以内</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="7"><span class="k">B</span>4〜7日</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="8"><span class="k">C</span>8日以上</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
         </div>
       </div>
 
       <!-- Q6 -->
       <div class="q" data-q="msgs">
         <div class="stage">配信</div>
-        <h3>登録から24時間のあいだに、自動で届く配信は何通ですか。</h3>
+        <h3 tabindex="-1"><span class="phrase">登録から24時間のあいだに、</span><span class="phrase">自動で届く配信は</span><span class="phrase">何通ですか。</span></h3>
         <div class="why">登録12時間で5通届く設計は、相手から見ると「追われている」と感じられやすい設計です。</div>
         <div class="opts">
-          <button class="opt" data-v="0"><span class="k">A</span>0通（自動配信はない）</button>
-          <button class="opt" data-v="2"><span class="k">B</span>1〜2通</button>
-          <button class="opt" data-v="4"><span class="k">C</span>3〜4通</button>
-          <button class="opt" data-v="5"><span class="k">D</span>5通以上</button>
-          <button class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="0"><span class="k">A</span>0通（自動配信はない）</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="2"><span class="k">B</span>1〜2通</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="4"><span class="k">C</span>3〜4通</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="5"><span class="k">D</span>5通以上</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="unknown"><span class="k">?</span>把握していない</button>
         </div>
       </div>
 
       <!-- Q7 -->
       <div class="q" data-q="pressure">
         <div class="stage">心理</div>
-        <h3>配信文に「まだ」「無断」「ラスト」「先着」「至急」のいずれかを使っていますか。</h3>
-        <div class="why">圧をかけると、人は動かされていると感じて止まります。特に女性のお客さまは反転します。</div>
+        <h3 tabindex="-1"><span class="phrase">配信文に「まだ」「無断」</span><span class="phrase">「ラスト」「先着」「至急」の</span><span class="phrase">いずれかを使っていますか。</span></h3>
+        <div class="why">圧をかけると、人は動かされていると感じて止まります。受け手の気持ちに沿った伝え方を確認します。</div>
         <div class="opts">
-          <button class="opt" data-v="yes"><span class="k">A</span>使っている</button>
-          <button class="opt" data-v="no"><span class="k">B</span>使っていない</button>
-          <button class="opt" data-v="unknown"><span class="k">?</span>わからない</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="yes"><span class="k">A</span>使っている</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="no"><span class="k">B</span>使っていない</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="unknown"><span class="k">?</span>わからない</button>
         </div>
       </div>
 
       <!-- Q8 -->
       <div class="q" data-q="temp">
         <div class="stage">配信</div>
-        <h3>見込み客の「温度」は、どう分けていますか。</h3>
+        <h3 tabindex="-1"><span class="phrase">見込み客の「温度」は、</span><span class="phrase">どう分けていますか。</span></h3>
         <div class="why">動画を見た人・感想を書いた人・申し込んだ人が分かれば、営業は温かい人にだけ時間を使えます。</div>
         <div class="opts">
-          <button class="opt" data-v="action"><span class="k">A</span>感想・返信などの行動で分けている</button>
-          <button class="opt" data-v="same"><span class="k">B</span>全員に同じ配信をしている</button>
-          <button class="opt" data-v="none"><span class="k">C</span>登録後の配信は特にしていない</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="action"><span class="k">A</span>感想・返信などの行動で分けている</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="same"><span class="k">B</span>全員に同じ配信をしている</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="none"><span class="k">C</span>登録後の配信は特にしていない</button>
         </div>
       </div>
 
       <!-- Q9 -->
       <div class="q" data-q="lost">
         <div class="stage">掘り起こし</div>
-        <h3>直近3ヶ月の失注・キャンセルには、どう対応していますか。</h3>
+        <h3 tabindex="-1"><span class="phrase">直近3ヶ月の</span><span class="phrase">失注・キャンセルには、</span><span class="phrase">どう対応していますか。</span></h3>
         <div class="why">一度は興味を示した人のリスト。追加の広告費はゼロです。</div>
         <div class="opts">
-          <button class="opt" data-v="none"><span class="k">A</span>特に何もしていない</button>
-          <button class="opt" data-v="auto"><span class="k">B</span>自動配信で案内している</button>
-          <button class="opt" data-v="personal"><span class="k">C</span>個別に声をかけている</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="none"><span class="k">A</span>特に何もしていない</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="auto"><span class="k">B</span>自動配信で案内している</button>
+          <button type="button" aria-pressed="false" class="opt" data-v="personal"><span class="k">C</span>個別に声をかけている</button>
         </div>
       </div>
 
-      <div class="nav">
-        <button class="btn ghost" id="prev" type="button">戻る</button>
-        <button class="btn primary" id="next" type="button" disabled>次へ</button>
-      </div>
-    </div>
+</div>
+          <p class="field-error" id="quiz-error" aria-live="polite"></p>
+          <div class="quiz-bottom"><p class="selection-help" id="selection-help">あてはまるものを1つお選びください。</p><div class="nav"><button class="btn back" id="prev" type="button">← 戻る</button><button class="btn primary" id="next" type="button" disabled>次へ →</button></div></div>
+        </div>
+        <p class="quiz-privacy" id="quiz-privacy"><span aria-hidden="true">✓</span> 診断結果を見るための登録は不要です。</p>
 
-    <!-- RESULT -->
-    <div class="res" id="result">
+    <div class="res" id="result" tabindex="-1" aria-label="診断結果">
       <div class="hundred">
         <div class="eyebrow" style="margin-bottom:2px">Your 100</div>
-        <h3>御社に100名入ったとき、何件決まりますか。</h3>
-        <div class="cap">同じ100名、同じ広告費。違うのは「入ってから面談までの体験」だけです。</div>
+        <h3><span class="phrase">御社に100名入ったとき、</span><span class="phrase">何件決まりますか。</span></h3>
+        <div class="cap">同じ100名、同じ広告費。登録後の体験を見直すための、比較の目安です。</div>
         <div class="bars">
           <div class="brow now"><div class="l">いまの<br>御社</div><div class="track"><i id="bar_now"></i></div><div class="v" id="v_now">—</div></div>
-          <div class="brow ours"><div class="l">弊社の<br>構築</div><div class="track"><i id="bar_ours"></i></div><div class="v">15<small>件</small></div></div>
+          <div class="brow ours"><div class="l">参考<br>レンジ</div><div class="track"><i id="bar_ours"></i></div><div class="v">15<small>件</small></div></div>
         </div>
         <div class="gap" id="gaptext"></div>
-        <p class="note" style="margin-top:10px">弊社の構築＝面談創出率25%×面談成約率60%。いずれも弊社の支援先（高単価・LINE経由）での実測レンジです。御社の数字はご入力値からの単純計算で、試算は保証ではありません。</p>
+        <p class="note" style="margin-top:10px">参考レンジ＝面談創出率25%×面談成約率60%。いずれも弊社の支援先（高単価・LINE経由）での実測レンジです。御社の数字はご入力値からの単純計算で、試算は保証ではありません。</p>
       </div>
 
       <div class="signals" id="signals"></div>
@@ -397,89 +210,80 @@ footer a{color:var(--navy);font-weight:700}
 
       <div class="culprit" id="culprit"></div>
 
-      <div class="ctaline" style="margin-top:22px">
+      <button class="text-button" type="button" id="edit-answers">← 回答を見直す</button><div class="ctaline" style="margin-top:22px">
         <a class="btn primary" href="#gift3">無料コンサル30分に申し込む</a>
         <a class="btn ghost" href="#checker">配信文の圧チェッカーへ</a>
         <button class="btn ghost" type="button" id="redo">もう一度診断する</button>
       </div>
     </div>
-  </section>
-</div>
-
-<!-- ============ CHECKER ============ -->
-<div class="wrap">
-  <section id="checker">
-    <div class="eyebrow">Gift 02</div>
-    <h2 class="sec-title">配信文の圧チェッカー</h2>
-    <p class="lead">今夜直したい1通を貼ってみてください。弊社が配信文を出す前に必ず通している8項目で確認します。LINEでもメールでも構いません。</p>
-    <div class="card" style="margin-top:18px">
-      <textarea id="msg" placeholder="例：
-【重要】まだヒアリングシートが完了していません！
-期限が迫っています。至急ご対応ください！！"></textarea>
-      <div class="nav" style="margin-top:12px">
-        <button class="btn ghost" type="button" id="sample">例文を入れる</button>
-        <button class="btn primary" type="button" id="check">8項目でチェックする</button>
       </div>
-      <div class="chk" id="chk"></div>
-    </div>
-
-    <h3 style="font-size:17px;color:var(--navy);font-weight:800;margin-top:28px">翻訳表：要求を「贈り物」に</h3>
-    <p class="note" style="margin-top:4px">要求は「私のため」、贈り物は「あなたのため」。同じ依頼が「自分のため」に変わった瞬間に、人は自分から動きます。</p>
-    <div class="tblwrap">
-      <table class="tr">
-        <thead><tr><th>要求（普通の言い方）</th><th class="us">翻訳後（弊社の言い方）</th></tr></thead>
-        <tbody>
-          <tr><td class="them">感想を送ってください</td><td class="us">学べることの一覧を先に贈り、「読んだらスタンプを送ってね」で小さなYESをもらう</td></tr>
-          <tr><td class="them">無断キャンセルしないでください</td><td class="us">警告文を消し、代わりに「胸を張れる5か条」を贈る。一、約束は守る　二、まずやってみる　三、嘘をつかない　四、途中で投げ出さない　五、学びを頑張る。親が子どもに毎日言っている言葉なので、読んだ方は「私はもうできている」と感じ、当日参加という約束を自分の意思で守りたくなる。日程変更の導線だけ置く</td></tr>
-          <tr><td class="them">ヒアリングシートを書いてください</td><td class="us">理由（正しくご案内できない）＋「たった1分」＋優しいトーン</td></tr>
-          <tr><td class="them">期限までに申し込んでください</td><td class="us">「同じスタートラインに立っていた方の話、聞きにきませんか」</td></tr>
-          <tr><td class="them">キャンセル後：特別枠をご用意しました。先着順です</td><td class="us">「その後、お変わりないですか？」日程は出さず、気遣いだけ</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="tpl">
-      <div class="h"><b>書き換えの実例（ヒアリングシートの案内）</b><button class="btn sm ghost" type="button" data-copy="tpl_hs">コピー</button></div>
-      <pre id="tpl_hs">ヒアリングシートの記載がないと、
-正しくカウンセリングができません…。
-
-たった１分で回答ができるので
-すぐに回答お願いしますね☺️♡</pre>
-      <div class="m">Beforeは赤文字で「まだ準備が完了していません！」。要求の中身は同じで、<b>回答率 +10.8pt</b>（弊社支援先の実測）。</div>
     </div>
   </section>
-</div>
 
-<!-- ============ GIFT 03 / FORM ============ -->
-<div class="wrap">
-  <section id="gift3">
-    <div class="eyebrow">Gift 03</div>
-    <h2 class="sec-title">ナーチャリング無料コンサル30分【限定3社】</h2>
-    <p class="lead">診断の結果を一緒に見ながら、直す順番を決める30分です（無料・オンライン）。売り込みはしません。お申し込みいただいた方には、森川から日程を1〜2枠ご提案します。</p>
-
-    <a class="pamph" href="../pamphlet/" target="_blank" rel="noopener">
-      <img src="img/pamphlet-cover.jpg" alt="ナーチャリングコンサルティングのご案内 表紙">
-      <div>
-        <div class="e">Nurturing Consulting</div>
-        <div class="t">ナーチャリングコンサルはこちら</div>
-        <div class="d">弊社のナーチャリングコンサルの考え方・実測の数字・提供範囲を8ページにまとめています。お申し込みの前に、ご覧いただけます。</div>
-        <span class="go">資料を見る</span>
+  <section class="feature-section checker-section" id="checker" aria-labelledby="checker-title">
+    <div class="section-shell feature-grid">
+      <div class="section-intro">
+        <div class="section-index"><span class="eyebrow">Gift</span><span>02</span></div>
+        <p class="section-kicker">伝えたいことが、届く言葉に。</p>
+        <h2 id="checker-title" class="sec-title"><span>配信文の</span><span>圧チェッカー</span></h2>
+        <p class="lead">今夜直したい1通を貼ってみてください。弊社が配信前に確認する8項目で、文章の伝わり方を見直します。</p>
+        <ul class="check-points"><li><span>01</span>お願いは、1つに絞れているか</li><li><span>02</span>理由や所要時間が伝わるか</li><li><span>03</span>強い言い方になっていないか</li></ul>
+        <p class="section-meta">LINE・メール対応 <span>／</span> 登録不要</p>
       </div>
-    </a>
-
-    <div class="card" style="margin-top:18px" id="formcard">
-      <form class="form" id="leadform" novalidate>
-        <div class="fld"><label>会社名・屋号</label><input type="text" id="f_company" autocomplete="organization" placeholder="株式会社○○"></div>
-        <div class="fld"><label>お名前</label><input type="text" id="f_name" autocomplete="name" placeholder="山田 花子" required></div>
-        <div class="fld"><label>メールアドレス</label><input type="email" id="f_mail" autocomplete="email" placeholder="hanako@example.com" required></div>
-        <div class="fld"><label>LINE ID または お電話番号<small>任意</small></label><input type="text" id="f_line" placeholder="LINEでのやり取りをご希望の方"></div>
-        <div class="fld"><label>いま一番気になっていること<small>任意</small></label><input type="text" id="f_note" placeholder="例：失注リストが300件眠っている"></div>
-        <button class="btn primary" type="submit" id="send">無料コンサル30分に申し込む</button>
-        <div class="st" id="formst">入力情報は日程のご連絡にのみ使用します。</div>
-      </form>
+      <div class="section-content">
+        <div class="card checker-card">
+          <div class="input-heading"><label for="msg">チェックしたい配信文</label><span id="char-count">0文字</span></div>
+          <textarea id="msg" maxlength="10000" aria-describedby="message-help message-error" placeholder="ここにLINEやメールの文章を貼り付けてください。&#10;&#10;文章が手元にない場合は、下の「例文を入れる」から試せます。"></textarea>
+          <p class="note input-note" id="message-help">入力内容は、このブラウザ内でチェックします。</p>
+          <p id="message-error" class="field-error" aria-live="polite"></p>
+          <div class="nav"><button class="text-button" type="button" id="sample">例文を入れる <span aria-hidden="true">↗</span></button><button class="btn primary" type="button" id="check">8項目でチェックする <span aria-hidden="true">→</span></button></div>
+          <div class="chk" id="chk" tabindex="-1" aria-label="配信文のチェック結果"></div>
+        </div>
+      </div>
     </div>
+    <div class="section-shell translation-section">
+      <div class="translation-heading"><div><p class="eyebrow">A change of words.</p><h3>要求を、<span class="highlight">「贈り物」</span>に。</h3></div><p class="note">同じお願いでも、伝え方で印象は変わります。<br>そのまま使える考え方を、5つの場面から。</p></div>
+      <div class="translation-list">
+        <details class="translation" open><summary><span class="translation-no">01</span><span>感想をお願いするとき</span><span class="expand-icon" aria-hidden="true"></span></summary><div class="translation-body"><div class="before"><span class="translation-label">いつもの言い方</span><p>感想を送ってください</p></div><div class="after"><span class="translation-label">贈り物に変えるなら</span><p>学べることの一覧を先に贈り、「読んだらスタンプを送ってね」で小さなYESをもらう。</p></div></div></details>
+        <details class="translation"><summary><span class="translation-no">02</span><span>当日の参加をご案内するとき</span><span class="expand-icon" aria-hidden="true"></span></summary><div class="translation-body"><div class="before"><span class="translation-label">いつもの言い方</span><p>無断キャンセルしないでください</p></div><div class="after"><span class="translation-label">贈り物に変えるなら</span><p>警告文の代わりに「胸を張れる5か条」を贈り、日程変更の導線を添える。</p><ol><li>約束は守る</li><li>まずやってみる</li><li>嘘をつかない</li><li>途中で投げ出さない</li><li>学びを頑張る</li></ol><p class="note">親が子どもに伝えるような身近な言葉で、「私はもうできている」と感じられる案内に。参加の約束を自分の意思で守りたくなるように伝えます。</p></div></div></details>
+        <details class="translation"><summary><span class="translation-no">03</span><span>ヒアリングシートをお願いするとき</span><span class="expand-icon" aria-hidden="true"></span></summary><div class="translation-body"><div class="before"><span class="translation-label">いつもの言い方</span><p>ヒアリングシートを書いてください</p></div><div class="after"><span class="translation-label">贈り物に変えるなら</span><p>「ご状況に合ったご案内のために」という理由と、回答にかかる時間を添える。語尾はやさしく。</p></div></div></details>
+        <details class="translation"><summary><span class="translation-no">04</span><span>お申し込みをご案内するとき</span><span class="expand-icon" aria-hidden="true"></span></summary><div class="translation-body"><div class="before"><span class="translation-label">いつもの言い方</span><p>期限までに申し込んでください</p></div><div class="after"><span class="translation-label">贈り物に変えるなら</span><p>「同じスタートラインに立っていた方の話、聞きにきませんか」</p></div></div></details>
+        <details class="translation"><summary><span class="translation-no">05</span><span>キャンセル後にお声がけするとき</span><span class="expand-icon" aria-hidden="true"></span></summary><div class="translation-body"><div class="before"><span class="translation-label">いつもの言い方</span><p>特別枠をご用意しました。お申し込みください。</p></div><div class="after"><span class="translation-label">贈り物に変えるなら</span><p>「その後、お変わりないですか？」<br>日程は出さず、気遣いの言葉から。</p></div></div></details>
+      </div>
+      <div class="example-layout"><div><p class="eyebrow">Try it in your next message.</p><h3>今夜の1通に、<br>使ってみてください。</h3><p class="note">理由・所要時間・やさしいトーン。<br>3つを添えると、こんな文章になります。</p></div><div class="tpl"><div class="h"><b>ヒアリングシートのご案内</b><button class="btn sm ghost" type="button" data-copy="tpl_hs">コピー</button></div><pre id="tpl_hs">ご状況に合ったご案内のために、
+ヒアリングシートをご用意しました。
 
-    <!-- THANKS -->
-    <div class="thanks" id="thanks">
+回答時間の目安は1分です。
+こちらからご回答をお願いしますね☺️</pre><div class="m">弊社支援先では、案内文の見直しにより<b>回答率が10.8pt向上</b>しました。この文面は、その考え方をもとにした例です。</div></div></div>
+    </div>
+  </section>
+
+  <section class="feature-section consult-section" id="gift3" aria-labelledby="consult-title">
+    <div class="section-shell feature-grid">
+      <div class="section-intro">
+        <div class="section-index"><span class="eyebrow">Gift</span><span>03</span></div>
+        <p class="section-kicker">次の一手を、一緒に。</p>
+        <h2 id="consult-title" class="sec-title"><span>ナーチャリング</span><span>無料コンサル</span></h2>
+        <div class="consult-meta"><span>30分</span><span>オンライン</span><span>受付枠：3社</span></div>
+        <p class="lead">診断の結果を一緒に見ながら、直す順番を決める30分です。売り込みはしません。お申し込み後、森川から日程を1〜2枠ご提案します。</p>
+        <a class="pamph" href="../pamphlet/" target="_blank" rel="noopener"><img src="img/pamphlet-cover.jpg" alt="ナーチャリングコンサルティングのご案内 表紙" width="90" height="128" loading="lazy"><div><div class="e">Nurturing Consulting</div><div class="t">コンサルのご案内</div><div class="d">考え方・実測の数字・提供範囲を<br>8ページにまとめました。</div><span class="go">資料を見る <span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開きます）</span></span></div></a>
+      </div>
+      <div class="section-content">
+        <div class="card" id="formcard">
+          <div class="form-heading"><h3>無料コンサルのお申し込み</h3><p class="note">日程のご連絡先をお知らせください。</p></div>
+          <form class="form" id="leadform" novalidate>
+            <div class="fld"><label for="f_company">会社名・屋号 <span class="optional">任意</span></label><input type="text" id="f_company" autocomplete="organization" placeholder="株式会社○○" maxlength="150"></div>
+            <div class="fld"><label for="f_name">お名前 <span class="required">必須</span></label><input type="text" id="f_name" autocomplete="name" placeholder="山田 花子" required maxlength="100" aria-describedby="formst"></div>
+            <div class="fld"><label for="f_mail">メールアドレス <span class="required">必須</span></label><input type="email" id="f_mail" autocomplete="email" placeholder="hanako@example.com" required maxlength="254" aria-describedby="formst"></div>
+            <div class="fld"><label for="f_line">LINE ID または お電話番号 <span class="optional">任意</span></label><input type="text" id="f_line" placeholder="LINEでのやり取りをご希望の方" maxlength="100"></div>
+            <div class="fld"><label for="f_note">いま気になっていること <span class="optional">任意</span></label><textarea id="f_note" placeholder="例：登録から面談までの流れを見直したい" maxlength="2000" rows="3"></textarea></div>
+            <p class="form-privacy">入力情報は日程のご連絡にのみ使用します。<br>診断済みの場合は、結果もあわせて送信します。</p>
+            <button class="btn primary" type="submit" id="send">無料コンサルに申し込む <span aria-hidden="true">→</span></button>
+            <div class="st" id="formst" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+    <div class="thanks" id="thanks" tabindex="-1" aria-label="お申し込み完了">
       <div class="card">
         <div class="eyebrow" style="margin-bottom:2px">Thank you</div>
         <h3 style="font-size:20px;color:var(--navy);font-weight:900;line-height:1.5">お申し込み、ありがとうございます。</h3>
@@ -501,280 +305,11 @@ footer a{color:var(--navy);font-weight:700}
         </div>
       </div>
     </div>
+      </div>
+    </div>
   </section>
-</div>
-
-<footer>
-  <div class="note">本ページの数値は、いずれも弊社の支援先での実測値です。守秘のためクライアント名・個人名は伏せ、業種のみ記載しています。「母数小」「初速」と付した数値は少数サンプル・立ち上がり時点の値、「試算」と明記した数値は実測値からの逆算であり、実測値とは区別しています。</div>
-  <div>株式会社Merone｜<a href="../pamphlet/">ナーチャリングコンサルのご案内</a></div>
-</footer>
-
-<script>
-(function(){
-  var SB_URL='https://inrvprlyobghviklulcv.supabase.co';
-  var SB_KEY='sb_publishable_ZrCNcsRHMci-l7Fns8QtIA_X22XZGJp';
-  var qs=new URLSearchParams(location.search);
-  var SRC=qs.get('src')||'chibatv-1007';
-  var DEMO=qs.get('demo')==='1';
-  function $(id){return document.getElementById(id);}
-
-  /* ---------- diagnosis state ---------- */
-  var Q=[].slice.call(document.querySelectorAll('#quiz .q'));
-  var A={}; var i=0; var DIAG=null;
-  var PRICE_MID={'〜5万円':30000,'5〜20万円':120000,'20〜50万円':350000,'50万円〜':500000};
-
-  function show(n){
-    i=Math.max(0,Math.min(Q.length-1,n));
-    Q.forEach(function(q,k){q.classList.toggle('on',k===i);});
-    $('pbar').style.width=((i+1)/Q.length*100)+'%';
-    $('pnum').textContent=(i+1)+' / '+Q.length;
-    $('prev').style.visibility=i===0?'hidden':'visible';
-    $('next').textContent=i===Q.length-1?'結果を見る':'次へ';
-    syncNext();
-  }
-  function cur(){return Q[i];}
-  function key(){return cur().getAttribute('data-q');}
-  function answered(){var k=key(); return A[k]!==undefined && A[k]!=='' && A[k]!==null;}
-  function syncNext(){$('next').disabled=!answered();}
-
-  Q.forEach(function(q){
-    var k=q.getAttribute('data-q');
-    q.querySelectorAll('.opt').forEach(function(b){
-      b.addEventListener('click',function(){
-        q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel');});
-        b.classList.add('sel');
-        var v=b.getAttribute('data-v');
-        A[k]=v;
-        var inp=q.querySelector('input'); if(inp){inp.value='';}
-        syncNext();
-        setTimeout(function(){ if(i<Q.length-1) show(i+1); else finish(); },260);
-      });
-    });
-    var inp=q.querySelector('input');
-    if(inp){
-      inp.addEventListener('input',function(){
-        q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel');});
-        var v=inp.value.trim();
-        A[k]=v===''?undefined:Number(v);
-        syncNext();
-      });
-      inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){e.preventDefault(); if(answered()){ if(i<Q.length-1) show(i+1); else finish(); }}});
-    }
-  });
-  $('next').addEventListener('click',function(){ if(!answered()) return; if(i<Q.length-1) show(i+1); else finish(); });
-  $('prev').addEventListener('click',function(){ show(i-1); });
-  $('redo').addEventListener('click',function(){ A={}; DIAG=null; document.querySelectorAll('#quiz .opt').forEach(function(x){x.classList.remove('sel');}); document.querySelectorAll('#quiz input').forEach(function(x){x.value='';}); $('result').classList.remove('on'); $('quiz').style.display=''; show(0); location.hash='#diag'; });
-  show(0);
-
-  /* ---------- scoring ---------- */
-  var STAGES=[
-    {k:'sekkei',nm:'設計',en:'FUNNEL'},
-    {k:'haishin',nm:'配信',en:'NURTURING'},
-    {k:'shinri',nm:'心理',en:'PSYCHOLOGY'},
-    {k:'mendan',nm:'面談',en:'CLOSING'},
-    {k:'horiokoshi',nm:'掘り起こし',en:'RE-ENGAGE'}
-  ];
-  var CUL={
-    sekkei:{t:'矢印に、まだ数字が置けていません',why:'置けない矢印が「見えていない場所」です。多くの会社で、登録と面談のあいだが誰の仕事でもなくなり、そこでリストが眠ります。数字がないと、直す順番も決められません。',step:'登録→面談、面談→成約。この2つの率を、今週出す',proof:'<b>S社</b>（女性向けキャリアスクール）：登録後の体験を組み直し、面談予約 <b>240名/月 → 929名/月</b>（導入半年）。広告費は増やしていません。'},
-    haishin:{t:'催促が、脱落を生んでいます',why:'登録12時間で5通届く設計は、相手から見れば「追われている」状態です。温度が見えないまま全員に同じ熱量で当たると、お客さまは離れ、営業は疲弊します。',step:'催促の自動配信を1通止める。止めても落ちません',proof:'<b>F社</b>（子育て世代向けサービス）：配信20通超→10通前後に半減で、キャンセル率 <b>46.2% → 31.3%</b>（−14.9pt）、ヒアリング回答率 63.4% → 74.2%。'},
-    shinri:{t:'圧が、反転を起こしています',why:'強い言葉・赤文字・「！」の連続・カウントダウン。人は「動かされている」と感じた瞬間に止まります（心理的リアクタンス）。要求の中身は同じでも、届け方で結果が逆になります。',step:'催促文を1通、「理由→ハードル下げ→優しいトーン」に書き換える',proof:'ヒアリングシートの案内を書き換えただけで、回答率 <b>+10.8pt</b>。面談相手の73%は分析・支持タイプで、熱量で押すほど逃げます。'},
-    mendan:{t:'「来たい気持ち」が、面談まで持っていません',why:'7日以上先の予約は半分来ません。枠の見せ方と、予約直後のひと言で実施率は動きます。面談で売るのではなく、面談前に「痛みの体験」と自分の言葉の「やりたい」を育てると、面談は確認の場になります。',step:'予約枠を1週間以内に絞る。予約直後5分以内に一言、日程変更の導線を置く（警告はゼロ）',proof:'<b>A社</b>（女性向け金融教育スクール）：予約枠を1週間以内に絞り、実施率 <b>48.8% → 59.1%</b>（+10.3pt）、7日超の予約 71件→0件。LINEのやり取り643件の分析では、煽りではなく「リスクを減らす言葉」が成約に最も寄与（58%）。'},
-    horiokoshi:{t:'一番安い広告が、眠っています',why:'失注・キャンセルした方は、一度は興味を示した方です。追加の広告費はゼロ。責めると逃げ、気遣うと返ってきます。自動配信の定型文ではなく、個別の気遣いの1通から。',step:'直近3ヶ月の失注・キャンセルに「気遣いの1通」。日程は出さない',proof:'<b>F社</b>：自動配信の復活率 1.3〜2.2%（411件）→ 共感型の個別お声がけ <b>15.5%</b>（71件）。約10倍。共感型の返信率100%（3件中3件・母数小）。'},
-    none:{t:'土台は整っています。次は、率を1ptずつ上げる段階です',why:'数字が置けていて、催促も圧も少なく、掘り起こしも個別にできている。ここまで揃っている会社は多くありません。次の伸びしろは、1通ずつのA/Bと、面談前の温度設計です。',step:'配信文を1通ずつA/Bで検証し、面談創出率25%・面談成約率60%のレンジを目指す',proof:'弊社の面談成約率（決着ベース）<b>59.9%</b>（面談1,163件・2025年1月〜2026年9月）。安定の4本柱＝面談前の温度ゲート・リードタイム管理・当日キャンセル抑制・クローザーの適性。'}
-  };
-
-  function sigOf(k){
-    var s='b', why='';
-    if(k==='sekkei'){
-      var unk=['leads','meet','close'].filter(function(x){return A[x]==='unknown';}).length;
-      if(unk>=2){s='p';why='3つの矢印のうち'+unk+'つに数字がありません。まだ見えていない場所がある状態です。';}
-      else if(unk===1){s='y';why='矢印の1つに数字がありません。そこが「誰の仕事でもない」場所になっている可能性があります。';}
-      else {s='b';why='登録→面談→成約の数字が置けています。ここから率を動かせます。';}
-    }
-    if(k==='haishin'){
-      var m=A.msgs, t=A.temp;
-      if(m==='5'){s='p';why='登録から24時間で5通以上。相手から見ると「追われている」と感じられやすい配信量です。';}
-      else if(m==='4'){s='y';why='24時間で3〜4通。重複や15分後の催促が混ざっていないか、1通ずつ見直す余地があります。';}
-      else if(m==='unknown'){s='y';why='自動配信の通数は、まだ見えていない状態です。登録直後に何が届くかを、一度ご自身で受け取ってみるのがおすすめです。';}
-      else {s='b';why='配信量は適正です。';}
-      if(t==='same'){ if(s==='b') s='y'; why+=' 全員に同じ配信のため、温度が見えず、営業の時間が分散しやすくなります。'; }
-      if(t==='none'){ if(s==='b') s='y'; why+=' 登録後の配信がないと、面談までのあいだに温度が下がります。1通1アクションの小さな導線から。'; }
-    }
-    if(k==='shinri'){
-      if(A.pressure==='yes'){s='p';why='警告語を使っています。要求の中身は同じでも、届け方で結果が逆転します。';}
-      else if(A.pressure==='unknown'){s='y';why='配信文の中身は、まだ見えていない状態です。下の圧チェッカーに1通貼ると、すぐ確認できます。';}
-      else {s='b';why='警告語は使っていません。次は「理由・所要時間・優しいトーン」の3点が揃っているかです。';}
-    }
-    if(k==='mendan'){
-      var lt=A.lt; var rate=null;
-      if(typeof A.meet==='number'&&typeof A.close==='number'&&A.meet>0){ rate=A.close/A.meet; }
-      if(lt==='8'){s='p';why='予約から面談まで8日以上。弊社支援先では、7日以上先の予約は半分来ませんでした。';}
-      else if(lt==='7'){s='y';why='予約から面談まで4〜7日。1週間以内に収まっていますが、枠をもう少し手前に寄せる余地があります。';}
-      else if(lt==='unknown'){s='y';why='予約から面談までの日数は、実施率を最も動かす数字の1つです。まずここを測るところからです。';}
-      else {s='b';why='予約から面談までが短く、温度が保たれやすい状態です。';}
-      if(rate!==null){
-        var pct=Math.round(rate*100);
-        if(rate<0.3){ s='p'; why+=' 面談成約率は約'+pct+'%。面談前に「欲しい」が育っていない可能性があります。'; }
-        else if(rate<0.5){ if(s==='b') s='y'; why+=' 面談成約率は約'+pct+'%。50%の壁は、面談前の温度設計で越えられます。'; }
-        else { why+=' 面談成約率は約'+pct+'%で、弊社レンジに近い水準です。'; }
-      }
-    }
-    if(k==='horiokoshi'){
-      if(A.lost==='none'){s='p';why='失注・キャンセルへの対応は、これからです。一番安い広告が眠っています。';}
-      else if(A.lost==='auto'){s='y';why='自動配信で案内しています。弊社支援先では自動配信1.3%に対し、個別の気遣いで15.5%でした。';}
-      else {s='b';why='個別に声をかけています。次は「2通で止める・3択で聞く・日程は1〜2枠」の型に。';}
-    }
-    return {s:s,why:why};
-  }
-
-  function finish(){
-    var sig={}; var order=['sekkei','haishin','shinri','mendan','horiokoshi'];
-    order.forEach(function(k){sig[k]=sigOf(k);});
-    var top=null;
-    order.forEach(function(k){ if(!top && sig[k].s==='p') top=k; });
-    if(!top) order.forEach(function(k){ if(!top && sig[k].s==='y') top=k; });
-    var topKey=top||'none';
-
-    // your 100
-    var now=null, r1=null, r2=null;
-    if(typeof A.leads==='number'&&typeof A.meet==='number'&&A.leads>0){ r1=A.meet/A.leads; }
-    if(typeof A.meet==='number'&&typeof A.close==='number'&&A.meet>0){ r2=A.close/A.meet; }
-    if(r1!==null&&r2!==null){ now=Math.round(100*r1*r2*10)/10; }
-    var ours=15;
-    $('bar_ours').style.width='100%';
-    if(now!==null){
-      var w=Math.max(2,Math.min(100,now/ours*100));
-      $('v_now').innerHTML=(Number.isInteger(now)?now:now.toFixed(1))+'<small>件</small>';
-      setTimeout(function(){$('bar_now').style.width=w+'%';},80);
-      var diff=Math.max(0,Math.round((ours-now)*10)/10);
-      var mid=PRICE_MID[A.price]||0;
-      var yen=Math.round(diff*mid/10000);
-      if(diff>0){
-        $('gaptext').innerHTML='同じ100名で、あと <b>'+(Number.isInteger(diff)?diff:diff.toFixed(1))+'件</b>。'+(mid?' 単価'+A.price+'なら、100名あたり約 <b>'+yen.toLocaleString()+'万円</b>の差（試算）。':'')+' 面談創出率 '+Math.round(r1*100)+'%、面談成約率 '+Math.round(r2*100)+'% が、いまの御社の数字です。';
-      } else {
-        $('gaptext').innerHTML='弊社の構築レンジに届いています。ここから先は、1通ずつの検証で率を積み上げる段階です。';
-      }
-    } else {
-      $('v_now').innerHTML='—<small>数字なし</small>';
-      $('bar_now').style.width='0%';
-      $('gaptext').innerHTML='御社の件数は、まだ出せません。<b>数字が置けていない矢印</b>があるためです。まずはここからで、最初の1手は「各矢印に数字を書く」です。';
-    }
-
-    // signals
-    var html='';
-    order.forEach(function(k){
-      var st=STAGES.filter(function(x){return x.k===k;})[0];
-      html+='<div class="sig'+(k===top?' top':'')+'"><div class="dot '+sig[k].s+'"></div><div class="nm">'+st.nm+'<small>'+st.en+'</small></div><div class="tx">'+sig[k].why+'</div></div>';
-    });
-    $('signals').innerHTML=html;
-
-    // culprit
-    var c=CUL[topKey];
-    var stname=top?STAGES.filter(function(x){return x.k===top;})[0].nm:'';
-    $('culprit').innerHTML='<div class="cat">'+(top?'Main bottleneck — '+stname:'All clear')+'</div><h3>'+c.t+'</h3><p>'+c.why+'</p>'+
-      '<div class="blk"><div class="k">今日できる1手</div><div class="v">'+c.step+'</div></div>'+
-      '<div class="blk"><div class="k">弊社支援先の実測</div><div class="m">'+c.proof+'</div></div>';
-
-    DIAG={top:top?stname:'整っている',topKey:topKey,signals:{sekkei:J(sig.sekkei.s),haishin:J(sig.haishin.s),shinri:J(sig.shinri.s),mendan:J(sig.mendan.s),horiokoshi:J(sig.horiokoshi.s)},now:now,ours:ours,r1:r1,r2:r2,inputs:JSON.parse(JSON.stringify(A))};
-    $('quiz').style.display='none';
-    $('result').classList.add('on');
-    setTimeout(function(){ document.getElementById('diag').scrollIntoView({behavior:'smooth',block:'start'}); },50);
-  }
-  function J(s){return s==='b'?'青':s==='y'?'黄':'桃';}
-
-  /* ---------- checker ---------- */
-  var NG=['まだ','無断','ラスト','先着','至急','絶対','今すぐ','急いで','急ぎ','期限','警告','注意','必ず','締切','締め切り','残りわずか','お早めに','最後','見逃','逃さ'];
-  var ACT=/(ください|下さい|お願いします|お願いいたします|してね|送ってね|お送り|ご回答|ご記入|ご登録|ご予約|お申し込み|お申込み|ご視聴|ご確認|お申し出|ご返信|ご参加|ご提出|お選び)/g;
-  var TIME=/(\d+|[一二三四五六七八九十]+)\s*(秒|分|分間|分ほど|分程度|分で)/;
-  var WHY=/(ので|ため|から|理由|だから|のです)/;
-  $('sample').addEventListener('click',function(){ $('msg').value='【重要】まだヒアリングシートが完了していません！\n期限が迫っています。至急ご対応ください！！\nあわせてフルネームの送付と、インタビュー動画の視聴、感想の送付もお願いします。\n本日中に必ず完了してください。';});
-  $('check').addEventListener('click',function(){
-    var t=$('msg').value||''; if(!t.trim()){ $('msg').focus(); return; }
-    var items=[]; var ok=0;
-    // 1 actions
-    var acts=(t.match(ACT)||[]).length;
-    if(acts>=2){ items.push(['ng','お願いが'+acts+'か所あります','1通1アクションに分けると、全部やってもらえます。複数のお願いは認知負荷で「全部やらない」になります。']); }
-    else { ok++; items.push(['ok','お願いは1つに絞れています',acts===0?'お願いの文が見当たりません。贈り物だけの1通なら、それも立派な設計です。':'1通1アクション。所要時間を添えると、さらに動きます。']); }
-    // 2 NG words
-    var hit=NG.filter(function(w){return t.indexOf(w)>=0;});
-    if(hit.length){ items.push(['ng','警告語があります：'+hit.join('・'),'「まだ」→「ご案内の続きです」、「無断キャンセルはご遠慮ください」→「ご都合が変わったら、こちらから変更できます」のように、逃げ道を先に手渡す言い方に。']); }
-    else { ok++; items.push(['ok','警告語はありません','圧センサーの第1関門は通過です。']); }
-    // 3 emphasis
-    var ex=(t.match(/[!！‼❗]/g)||[]).length; var dbl=/[!！]{2,}|‼/.test(t); var strong=/【重要】|【緊急】|重要|緊急/.test(t);
-    if(dbl||ex>=3||strong){ items.push(['ng','強調が多めです（「！」'+ex+'個'+(strong?'・【重要】':'')+'）','「！」は1通に1つまで。赤文字・太字・「重要」は、受け取る側には「怒られている」に近い温度で届きます。']); }
-    else { ok++; items.push(['ok','強調は控えめです','感情のピークは1点に。最後の一言で印象を「楽しみ」に上書きすると、読後感まで設計できます。']); }
-    // 4 time
-    if(TIME.test(t)){ ok++; items.push(['ok','所要時間が書いてあります','「2秒」「1分」があるだけで、ハードルは1/10になります。']); }
-    else { items.push(['ng','所要時間がありません','人が一番嫌うのは「いつ終わるか分からないこと」。「たった1分で終わります」を添えてください。']); }
-    // 5 why
-    if(WHY.test(t)){ ok++; items.push(['ok','「なぜ」が入っています','理由がつくだけで、人は協力します（「急いでいるので」で承諾率6割→9割超の実験が有名です）。']); }
-    else { items.push(['ng','「なぜ」がありません','「〇〇がないと、正しくご案内できません…」のように、お願いの前に理由を1行。']); }
-    // 6 length
-    var len=t.replace(/\s/g,'').length;
-    if(len<=300){ ok++; items.push(['ok','文字数 '+len+'字（300字以内）','開いた瞬間に「何を・何分で・なぜ」が分かる長さです。']); }
-    else { items.push(['ng','文字数 '+len+'字（300字超）','スクロールが要る長さは、読まれにくくなります。1通に1つだけ残して、残りは次の配信に。']); }
-    // 7 emoji dup
-    var emo=t.match(/\p{Extended_Pictographic}/gu)||[]; var cnt={}; var dup=[];
-    emo.forEach(function(e){cnt[e]=(cnt[e]||0)+1;}); Object.keys(cnt).forEach(function(e){ if(cnt[e]>=2) dup.push(e+'×'+cnt[e]); });
-    if(dup.length){ items.push(['ng','同じ絵文字が重なっています：'+dup.join(' '),'同じ絵文字の連続は、雑な印象になりやすいです。1通1〜3個、強調したい1点にだけ。']); }
-    else if(emo.length>3){ items.push(['info','絵文字が'+emo.length+'個あります','多すぎると「絵文字疲れ」になります。1通1〜3個が目安です。']); }
-    else { ok++; items.push(['ok','絵文字は厳選されています',emo.length===0?'絵文字ゼロでも、文章力で温度は出せます。':'感情のピーク1点に置けています。']); }
-    // 8 date/weekday
-    var dm=t.match(/(\d{1,2})月(\d{1,2})日\s*[（(]?([月火水木金土日])?/);
-    if(dm){
-      var now=new Date(); var y=now.getFullYear(); var d=new Date(y,Number(dm[1])-1,Number(dm[2]));
-      if((now-d)/86400000>60){ d=new Date(y+1,Number(dm[1])-1,Number(dm[2])); }
-      var wd='日月火水木金土'[d.getDay()];
-      if(dm[3]){ if(dm[3]===wd){ ok++; items.push(['ok','日付と曜日が合っています（'+dm[1]+'月'+dm[2]+'日は'+wd+'曜日）','曜日の間違いは信頼に直結します。毎回カレンダーで確認を。']); }
-        else { items.push(['ng','曜日が合っていません：'+dm[1]+'月'+dm[2]+'日は「'+wd+'」曜日です','本文は「'+dm[3]+'」になっています。'+d.getFullYear()+'年のカレンダーで再確認してください。']); } }
-      else { items.push(['info',dm[1]+'月'+dm[2]+'日は '+wd+'曜日です','曜日を添えると、受け取る側が予定を入れやすくなります。']); }
-    } else { ok++; items.push(['ok','日付の記載はありません','日付を入れるときは、必ず曜日とセットで。']); }
-
-    var html='<div class="score"><span class="n">'+ok+' / 8</span><span class="l">圧の少なさ（機械チェックの目安です）</span></div>';
-    items.forEach(function(it){ html+='<div class="ck '+it[0]+'"><div class="ic">'+(it[0]==='ok'?'✓':it[0]==='ng'?'!':'i')+'</div><div><div class="t">'+it[1]+'</div><div class="d">'+it[2]+'</div></div></div>'; });
-    html+='<p class="note" style="margin-top:6px">最後の関門は、声に出して読むこと。書いた本人が違和感を覚える文章は、お客さまも違和感を覚えます。</p>';
-    $('chk').innerHTML=html; $('chk').classList.add('on');
-  });
-
-  /* ---------- copy buttons ---------- */
-  document.querySelectorAll('[data-copy]').forEach(function(b){
-    b.addEventListener('click',function(){
-      var el=document.getElementById(b.getAttribute('data-copy')); if(!el) return;
-      var txt=el.textContent;
-      function done(){ var o=b.textContent; b.textContent='コピーしました'; setTimeout(function(){b.textContent=o;},1400); }
-      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(function(){fallback();}); } else fallback();
-      function fallback(){ var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); done(); }
-    });
-  });
-
-  /* ---------- lead form ---------- */
-  $('leadform').addEventListener('submit',function(e){
-    e.preventDefault();
-    var name=$('f_name').value.trim(), mail=$('f_mail').value.trim(), company=$('f_company').value.trim();
-    var st=$('formst');
-    if(!name){ st.className='st ng'; st.textContent='お名前をご記入ください。'; $('f_name').focus(); return; }
-    if(!mail||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){ st.className='st ng'; st.textContent='メールアドレスの形式をご確認ください。'; $('f_mail').focus(); return; }
-    var row={
-      run_id:'nurture-gift', task_key:'l_'+Date.now()+'_'+Math.floor(Math.random()*1000000), done:true,
-      owner_depts:'nurture-gift', owner_members:name.slice(0,40),
-      memo:JSON.stringify({v:1,name:name,company:company,mail:mail,line:$('f_line').value.trim(),mendan:true,src:SRC,price:(A.price||''),diag:DIAG,note:$('f_note').value.trim(),at:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)}),
-      link_url:'', updated_at:new Date().toISOString()
-    };
-    $('send').disabled=true; st.className='st'; st.textContent='送信しています…';
-    function showThanks(sent){
-      $('formcard').classList.add('hidden'); $('thanks').classList.add('on');
-      if(!sent){ $('thanksnote').innerHTML='通信の不具合で送信が完了できませんでした。お手数ですが、少し時間をおいて、もう一度お試しください。'; }
-      setTimeout(function(){ document.getElementById('gift3').scrollIntoView({behavior:'smooth',block:'start'}); },50);
-    }
-    if(DEMO){ showThanks(true); return; }
-    var tries=0;
-    (function post(){
-      fetch(SB_URL+'/rest/v1/promo_tasks',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},body:JSON.stringify(row)})
-      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); showThanks(true); })
-      .catch(function(){ tries++; if(tries<3){ setTimeout(post,1200*tries); } else { showThanks(false); } });
-    })();
-  });
-})();
-</script>
+</main>
+<footer class="site-footer"><div class="section-shell"><div class="footer-top"><a class="brand" href="#top" aria-label="Merone ページの先頭へ"><img src="../merone-logo.png" alt="Merone" width="151" height="32" loading="lazy"></a><a href="../pamphlet/">ナーチャリングコンサルのご案内 <span aria-hidden="true">↗</span></a><a href="#top" class="back-top">ページの先頭へ ↑</a></div><p class="footer-note">本ページの実績数値は、弊社の支援先での実測値です。守秘のためクライアント名・個人名は伏せ、業種のみ記載しています。「母数小」「初速」と付した数値は少数サンプル・立ち上がり時点の値、「試算」と明記した数値はご入力値や実測レンジからの単純計算であり、実測値とは区別しています。成果を保証するものではありません。</p><p class="copyright">© Merone Inc.</p></div></footer>
+<div class="sr-only" id="copy-status" role="status" aria-live="polite"></div>
 </body>
 </html>
