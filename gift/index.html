@@ -769,8 +769,8 @@ footer a{color:var(--navy);font-weight:700}
     if(DEMO){ showThanks(true); return; }
     var tries=0;
     (function post(){
-      fetch(SB_URL+'/rest/v1/promo_tasks',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},body:JSON.stringify(row)})
-      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); showThanks(true); })
+      fetch(SB_URL+'/rest/v1/promo_tasks',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(row)})
+      .then(function(r){ if(!r.ok&&r.status!==409) throw new Error('HTTP '+r.status); showThanks(true); })
       .catch(function(){ tries++; if(tries<3){ setTimeout(post,1200*tries); } else { showThanks(false); } });
     })();
   });
